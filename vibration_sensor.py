@@ -5,6 +5,10 @@ import adafruit_ads1x15.ads1115 as ADS
 from adafruit_ads1x15.analog_in import AnalogIn
 import json
 
+
+
+#진동 센서  output 1 or 0 예상
+
 def setup_vibration_sensor():
     i2c = busio.I2C(board.SCL, board.SDA)
     ads = ADS.ADS1115(i2c)
