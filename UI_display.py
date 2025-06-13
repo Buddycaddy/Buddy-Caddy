@@ -27,3 +27,5 @@ if __name__ == "__main__":
     test_data = {"detected": True, "speed": 20.5, "impact_position": (100, 200)}
     app.update(test_data)
     root.mainloop()
+
+    #test
