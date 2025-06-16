@@ -1,0 +1,7 @@
+prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+includedir=${prefix}/include
+ 
+Name: XF86DRIProto
+Description: XF86DRI extension headers
+Version: 2.1.1
+Cflags: -I${includedir}/X11/dri

@@ -1,0 +1,7 @@
+prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+includedir=${prefix}/include
+ 
+Name: ResourceProto
+Description: Resource extension headers
+Version: 1.2.0
+Cflags: -I${includedir}

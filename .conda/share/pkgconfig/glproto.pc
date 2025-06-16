@@ -1,0 +1,7 @@
+prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+includedir=${prefix}/include
+ 
+Name: GLProto
+Description: GL extension headers
+Version: 1.4.17
+Cflags: -I${includedir}
