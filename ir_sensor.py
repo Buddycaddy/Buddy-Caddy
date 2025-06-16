@@ -4,29 +4,37 @@
 #     print("RPi.GPIO not found, using emulator")
 from gpiozero import Button, Device
 from gpiozero.pins.mock import MockFactory
+from multiprocessing import Queue, Value
 import time
 import json
 
-# Pin Factory를 MockFactory로 설정
+# Pin Factory를 MockFactory로 설정 (PC 테스트용)
 Device.pin_factory = MockFactory()
 
-IR_PIN = 17
+IR_PIN = 17  # IR 센서가 연결된 GPIO 핀 번호
 
-def ir_callback():
+def ir_disconnected_callback(queue):
     timestamp = time.time()
-    print(json.dumps({"event": "ir_trigger", "timestamp": timestamp}))
+    queue.put({"source": "ir_sensor", "event": "ir_trigger", "timestamp": timestamp})
 
-def setup_ir_sensor():
-    ir_sensor = Button(IR_PIN, pull_up=True)  # GPIO 핀을 풀업 설정
-    ir_sensor.when_pressed = ir_callback  # 버튼이 눌렸을 때 콜백 실행
+def setup_ir_sensor(queue, is_ready):
+    ir_sensor = Button(IR_PIN, pull_up=True)
+    def conditional_callback():
+        with is_ready.get_lock():
+            if is_ready.value:
+                ir_disconnected_callback(queue)
+    ir_sensor.when_pressed = conditional_callback
     return ir_sensor
 
 if __name__ == "__main__":
+    from multiprocessing import Queue, Value
+    queue = Queue()
+    is_ready = Value('b', False)
     try:
-        ir_sensor = setup_ir_sensor()
+        ir_sensor = setup_ir_sensor(queue, is_ready)
         print("IR sensor ready")
         while True:
-            time.sleep(1)  # 메인 루프에서 대기
+            pass
     except KeyboardInterrupt:
         print("Exiting program")
 
