@@ -28,4 +28,22 @@ if __name__ == "__main__":
         while True:
             time.sleep(1)  # 메인 루프에서 대기
     except KeyboardInterrupt:
-        GPIO.cleanup()
+        print("Exiting program")
+
+# def ir_callback(channel):
+#     timestamp = time.time()
+#     print(json.dumps({"event": "ir_trigger", "timestamp": timestamp}))
+
+# def setup_ir_sensor():
+#     GPIO.setmode(GPIO.BCM)
+#     GPIO.setup(IR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+#     GPIO.add_event_detect(IR_PIN, GPIO.FALLING, callback=ir_callback, bouncetime=200)
+
+# if __name__ == "__main__":
+#     try:
+#         setup_ir_sensor()
+#         print("IR sensor ready")
+#         while True:
+#             time.sleep(1)
+#     except KeyboardInterrupt:
+#         GPIO.cleanup()

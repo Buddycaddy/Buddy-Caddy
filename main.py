@@ -15,7 +15,7 @@ import time
 
 def ball_detection_process(queue):
     cap = cv2.VideoCapture(0)
-    shot_position = (320, 240)
+    shot_position = (960, 540)
     while True:
         ret, frame = cap.read()
         if ret:
