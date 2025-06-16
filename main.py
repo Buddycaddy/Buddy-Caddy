@@ -116,6 +116,11 @@ class MainApp:
 
     def check_queue(self):
         while not self.queue.empty():
+
+#             if isinstance(data, dict) and "detected" in data:
+#                 print("호출 전")
+#                 self.ui.show_ball_detected(data["detected"], "Result/res_img.png" if data["detected"] else None)
+#                 print("호출 후")
             try:
                 data = self.queue.get()
                 logging.debug(f"Queue data: {data}")
@@ -147,3 +152,4 @@ class MainApp:
 
 if __name__ == "__main__":
     MainApp().run()
+
