@@ -1,0 +1,7 @@
+prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+includedir=${prefix}/include
+
+Name: VideoProto
+Description: Video extension headers
+Version: 2.3.3
+Cflags: -I${includedir}

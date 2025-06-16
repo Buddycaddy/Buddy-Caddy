@@ -1,0 +1,3 @@
+include "/home/sophie/Desktop/25_최진철/golf vision/code/.conda/share/X11/locale/en_US.UTF-8/Compose"
+<dead_acute> <C>	: "Ç" Ccedilla # LATIN CAPITAL LETTER C WITH CEDILLA
+<dead_acute> <c>	: "ç" ccedilla # LATIN SMALL LETTER C WITH CEDILLA

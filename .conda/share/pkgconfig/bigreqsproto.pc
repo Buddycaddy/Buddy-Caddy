@@ -1,0 +1,7 @@
+prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+includedir=${prefix}/include
+ 
+Name: BigReqsProto
+Description: BigReqs extension headers
+Version: 1.1.2
+Cflags: -I${includedir}

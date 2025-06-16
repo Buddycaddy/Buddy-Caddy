@@ -1,88 +1,31 @@
-import RPi.GPIO as GPIO
+# try:
+#     import RPi.GPIO as GPIO
+# except ImportError:
+#     print("RPi.GPIO not found, using emulator")
+from gpiozero import Button, Device
+from gpiozero.pins.mock import MockFactory
 import time
 import json
 
+# Pin Factory를 MockFactory로 설정
+Device.pin_factory = MockFactory()
+
 IR_PIN = 17
 
-def ir_callback(channel):
+def ir_callback():
     timestamp = time.time()
     print(json.dumps({"event": "ir_trigger", "timestamp": timestamp}))
 
 def setup_ir_sensor():
-    GPIO.setmode(GPIO.BCM)
-    GPIO.setup(IR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-    GPIO.add_event_detect(IR_PIN, GPIO.FALLING, callback=ir_callback, bouncetime=200)
+    ir_sensor = Button(IR_PIN, pull_up=True)  # GPIO 핀을 풀업 설정
+    ir_sensor.when_pressed = ir_callback  # 버튼이 눌렸을 때 콜백 실행
+    return ir_sensor
 
 if __name__ == "__main__":
     try:
-        setup_ir_sensor()
+        ir_sensor = setup_ir_sensor()
         print("IR sensor ready")
         while True:
-            time.sleep(1)
+            time.sleep(1)  # 메인 루프에서 대기
     except KeyboardInterrupt:
         GPIO.cleanup()
-
-
-
-
-
-# 처음부터 다시 수정하기 전 코드들
-
-# import time
-# import datetime
-# import threading
-
-# try:
-#     import RPi.GPIO as GPIO
-#     IS_PI = True
-# except ImportError:
-#     IS_PI = False
-
-# IR_PIN = 17
-
-# def setup_ir_sensor(queue, simulate=False):
-#     if simulate or not IS_PI:
-#         # 시뮬레이션 모드: 3~6초 간격으로 감지된 것처럼 이벤트 발생
-#         def simulate_ir():
-#             while True:
-#                 time.sleep(3 + (time.time() % 3))
-#                 timestamp = datetime.datetime.now().timestamp()
-#                 queue.put({"event": "ir_trigger", "timestamp": timestamp})
-#         threading.Thread(target=simulate_ir, daemon=True).start()
-#     else:
-#         GPIO.setmode(GPIO.BCM)
-#         GPIO.setup(IR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-#         def ir_callback(channel):
-#             timestamp = datetime.datetime.now().timestamp()
-#             queue.put({"event": "ir_trigger", "timestamp": timestamp})
-
-#         GPIO.add_event_detect(IR_PIN, GPIO.FALLING, callback=ir_callback, bouncetime=200)
-
-
-
-
-
-# # import RPi.GPIO as GPIO
-# # import time
-# # import json
-
-# # IR_PIN = 17
-
-# # def ir_callback(channel):
-# #     timestamp = time.time()
-# #     print(json.dumps({"event": "ir_trigger", "timestamp": timestamp}))
-
-# # def setup_ir_sensor():
-# #     GPIO.setmode(GPIO.BCM)
-# #     GPIO.setup(IR_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-# #     GPIO.add_event_detect(IR_PIN, GPIO.FALLING, callback=ir_callback, bouncetime=200)
-
-# # if __name__ == "__main__":
-# #     try:
-# #         setup_ir_sensor()
-# #         print("IR sensor ready")
-# #         while True:
-# #             time.sleep(1)
-# #     except KeyboardInterrupt:
-# #         GPIO.cleanup()

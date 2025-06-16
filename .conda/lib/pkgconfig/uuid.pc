@@ -1,0 +1,11 @@
+prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+exec_prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+libdir=/home/sophie/Desktop/25_최진철/golf vision/code/.conda/lib
+includedir=/home/sophie/Desktop/25_최진철/golf vision/code/.conda/include
+
+Name: uuid
+Description: Universally unique id library
+Version: 2.32.1
+Requires:
+Cflags: -I${includedir}/uuid
+Libs: -L${libdir} -luuid
