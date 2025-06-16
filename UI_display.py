@@ -45,8 +45,8 @@ class BallDetectionUI(QWidget):
         # 안내 텍스트
         self.text_label = QLabel("", self)
         self.text_label.setAlignment(Qt.AlignCenter)
-        self.text_label.setStyleSheet("font-size: 52px; color: white; background-color: rgba(0,0,0,120);")
-        self.text_label.setGeometry(0, self.h // 4, self.w, 100)
+        self.text_label.setStyleSheet("font-size: 120px; color: white; background-color: rgba(0,0,0,120);")
+        self.text_label.setGeometry(0, self.h // 4, self.w, 160)
 
         # 결과 텍스트
         text_area_width = int(self.w * 0.2)
@@ -55,9 +55,9 @@ class BallDetectionUI(QWidget):
         self.result_text_label = QLabel(self)
         self.result_text_label.setAlignment(Qt.AlignCenter)
         self.result_text_label.setWordWrap(True)
-        self.result_text_label.setStyleSheet("font-size: 34px; color: white; background-color: rgba(0,0,0,120);")
+        self.result_text_label.setStyleSheet("font-size: 40px; color: white; background-color: rgba(0,0,0,120);")
         self.result_text_label.setContentsMargins(5, 5, 5, 5)
-        self.result_text_label.setGeometry(margin_left, (self.h - text_box_height) // 2, text_area_width, text_box_height)
+        self.result_text_label.setGeometry(margin_left-15, (self.h - text_box_height) // 2, text_area_width+30, text_box_height)
 
         # 결과 이미지 2개
         image_width = int(self.w * 2 / 5)
@@ -86,6 +86,77 @@ class BallDetectionUI(QWidget):
         self.splash_image_label.setVisible(False)
         self.text_label.setText("공을 놓으세요")
         self.text_label.setVisible(True)
+
+
+
+    # 추가
+    # BallDetectionUI 클래스 내부에 아래 두 메서드 추가
+    def show_message(self, message):
+        if hasattr(self, 'text_label'):
+            self.text_label.setText(message)
+        else:
+            self.text_label = QLabel(message, self)
+            self.text_label.setStyleSheet("color: red; font-size: 48px; font-weight: bold;")
+            self.text_label.setGeometry(100, 100, 800, 100)
+            self.text_label.show()
+
+    # def show_detected_image(self, image_path):
+    #     if hasattr(self, 'result_label'):
+    #         self.result_label.setPixmap(QPixmap(image_path).scaled(640, 480, Qt.KeepAspectRatio))
+    #     else:
+    #         self.result_label = QLabel(self)
+    #         self.result_label.setGeometry(300, 200, 640, 480)
+    #         self.result_label.setPixmap(QPixmap(image_path).scaled(640, 480, Qt.KeepAspectRatio))
+    #         self.result_label.show()
+
+    
+    def show_detected_image(self, image_path):
+        from os.path import exists
+
+        if not exists(image_path):
+            print(f"[경고] 이미지 경로가 잘못되었습니다: {image_path}")
+            return
+
+        pixmap = QPixmap(image_path)
+        if pixmap.isNull():
+            print(f"[경고] 이미지를 불러올 수 없습니다: {image_path}")
+            return
+
+        pixmap = pixmap.scaled(600, 400, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+
+        if hasattr(self, 'result_label'):
+            self.result_label.setPixmap(pixmap)
+            self.result_label.setVisible(True)
+            self.result_label.raise_()
+        else:
+            self.result_label = QLabel(self)
+            self.result_label.setPixmap(pixmap)
+            self.result_label.setGeometry(
+                (self.w - pixmap.width()) // 2,
+                (self.h - pixmap.height()) // 2 + 150,
+                pixmap.width(),
+                pixmap.height()
+            )
+            self.result_label.setStyleSheet("background-color: white; border: 2px solid black;")
+            self.result_label.setAlignment(Qt.AlignCenter)
+            self.result_label.setVisible(True)
+            self.result_label.raise_()
+
+
+    def show_ball_detected(self, detected, image_path=None):
+        if detected:
+            self.text_label.setText("공을 치세요")
+            if image_path:
+                pixmap = QPixmap(image_path)
+                self.result_image_label1.setPixmap(pixmap)
+                self.result_image_label1.setVisible(True)
+        else:
+            self.text_label.setText("공을 놓으세요")
+            self.result_image_label1.setVisible(False)        
+    # 추가
+
+
+
 
     def handle_ir_detected(self):
         if self.state == "WAIT_BALL":
@@ -129,4 +200,4 @@ if __name__ == "__main__":
     window = BallDetectionUI(width, height)
     window.move(geometry.x(), geometry.y())
     window.showFullScreen()
-    sys.exit(app.exec_())
+

@@ -71,6 +71,7 @@ def detect_ball(frame, shot_position, radius_threshold=600):
         x, y, r = circles[0][0]
         distance = np.sqrt((x - shot_position[0])**2 + (y - shot_position[1])**2)
         if distance < radius_threshold:
+
             timestamp = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
             return {
                 "source": "ball_detector",
@@ -124,6 +125,12 @@ if __name__ == "__main__":
     # shot_position = (960, 540)  # 예: 프레임 중앙
     # result = detect_ball(frame, shot_position)
 
+    print(json.dumps(result))  # JSON 직렬화 가능
+
+    # 추가
+    cv2.imwrite("res_img.png", frame)
+    # 추가
+
 #  # 결과 시각화
 #     if result["detected"]:
 #         x, y = map(int, result["position"])  # 좌표를 int로 변환
@@ -131,6 +138,7 @@ if __name__ == "__main__":
 #         cv2.circle(frame, (x, y), r, (0, 255, 0), 2)  # 감지된 공 위치 표시
 #         cv2.putText(frame, "Ball Detected", (x + 15, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
     # print(json.dumps(result))  # JSON 직렬화 가능
+
     
     # cv2.imshow("Ball Detection", frame)
     # cv2.waitKey(0)
