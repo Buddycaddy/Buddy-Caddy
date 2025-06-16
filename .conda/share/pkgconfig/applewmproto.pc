@@ -1,0 +1,7 @@
+prefix=/home/sophie/Desktop/25_최진철/golf vision/code/.conda
+includedir=${prefix}/include
+ 
+Name: AppleWMProto
+Description: AppleWM extension headers
+Version: 1.4.2
+Cflags: -I${includedir}

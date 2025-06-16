@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt, QTimer
 import sys
@@ -14,11 +14,12 @@ class BallDetectionUI(QWidget):
 
         self.w = screen_width
         self.h = screen_height
-        self.speed_value = 28
+        self.speed_value = None
+        self.impact_position = None
 
         # 배경 이미지
         self.bg_label = QLabel(self)
-        self.bg_label.setPixmap(QPixmap("yard.jpg").scaled(self.w, self.h, Qt.KeepAspectRatioByExpanding))
+        self.bg_label.setPixmap(QPixmap("./resource/yard.jpg").scaled(self.w, self.h, Qt.KeepAspectRatioByExpanding))
         self.bg_label.setGeometry(0, 0, self.w, self.h)
 
         # splash 흰 배경
@@ -29,7 +30,7 @@ class BallDetectionUI(QWidget):
 
         # splash 이미지
         self.splash_image_label = QLabel(self)
-        splash_pixmap = QPixmap("splash.png")
+        splash_pixmap = QPixmap("./resource/splash.png")
         splash_width = splash_pixmap.width()
         splash_height = splash_pixmap.height()
         self.splash_image_label.setPixmap(splash_pixmap)
@@ -72,24 +73,11 @@ class BallDetectionUI(QWidget):
         self.result_image_label2.setGeometry(text_area_width + image_width + gap_shift - image_gap_reduction, (self.h - image_height) // 2, image_width, image_height)
         self.result_image_label2.setAlignment(Qt.AlignCenter)
 
-        # 버튼 (테스트용 - 센서 대체)
-        self.ir_button = QPushButton("IR센서: 공 감지됨", self)
-        self.ir_button.setGeometry((self.w - 400) // 2, self.h - 250, 400, 60)
-        self.ir_button.setStyleSheet("font-size: 24px; background-color: #ffffffcc;")
-        self.ir_button.clicked.connect(self.handle_ir_detected)
-
-        self.camera_button = QPushButton("카메라: 네트 맞음", self)
-        self.camera_button.setGeometry((self.w - 400) // 2, self.h - 160, 400, 60)
-        self.camera_button.setStyleSheet("font-size: 24px; background-color: #ffffffcc;")
-        self.camera_button.clicked.connect(self.handle_camera_detected)
-
         # 초기 UI 상태 설정
         self.text_label.setVisible(False)
         self.result_text_label.setVisible(False)
         self.result_image_label1.setVisible(False)
         self.result_image_label2.setVisible(False)
-        self.ir_button.setVisible(False)
-        self.camera_button.setVisible(False)
 
         QTimer.singleShot(1000, self.show_main_ui)
 
@@ -98,8 +86,6 @@ class BallDetectionUI(QWidget):
         self.splash_image_label.setVisible(False)
         self.text_label.setText("공을 놓으세요")
         self.text_label.setVisible(True)
-        self.ir_button.setVisible(True)
-        self.camera_button.setVisible(True)
 
 
 
@@ -177,12 +163,15 @@ class BallDetectionUI(QWidget):
             self.text_label.setText("공을 치세요")
             self.state = "READY_TO_HIT"
 
-    def handle_camera_detected(self):
+    def handle_camera_detected(self, speed, impact_position):
         if self.state == "READY_TO_HIT":
             self.state = "SHOW_RESULT"
             self.text_label.setVisible(False)
 
-            self.result_text_label.setText(f"\U0001F3C3속도: {self.speed_value} km/h")
+            if speed is not None:
+                self.result_text_label.setText(f"\U0001F3C3속도: {speed} km/h\n위치: {impact_position if impact_position else 'N/A'}")
+            else:
+                self.result_text_label.setText("속도: N/A\n위치: N/A")
             self.result_text_label.setVisible(True)
 
             img1 = QPixmap("result1.png").scaled(self.result_image_label1.width(), self.result_image_label1.height(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
@@ -211,38 +200,4 @@ if __name__ == "__main__":
     window = BallDetectionUI(width, height)
     window.move(geometry.x(), geometry.y())
     window.showFullScreen()
-    sys.exit(app.exec_())
 
-
-
-# # import tkinter as tk
-# # import json
-
-# # class GolfUI:
-# #     def __init__(self, root):
-# #         self.root = root
-# #         self.root.title("Golf Simulator")
-# #         self.label = tk.Label(root, text="Waiting for ball...", font=("Arial", 24))
-# #         self.label.pack(pady=20)
-# #         self.speed_label = tk.Label(root, text="Speed: N/A", font=("Arial", 18))
-# #         self.speed_label.pack(pady=10)
-# #         self.impact_label = tk.Label(root, text="Impact: N/A", font=("Arial", 18))
-# #         self.impact_label.pack(pady=10)
-
-# #     def update(self, data):
-# #         if "detected" in data and data["detected"]:
-# #             self.label.config(text="Hit the ball!")
-# #         if "speed" in data and data["speed"]:
-# #             self.speed_label.config(text=f"Speed: {data['speed']:.2f} m/s")
-# #         if "impact_position" in data and data["impact_position"]:
-# #             x, y = data["impact_position"]
-# #             self.impact_label.config(text=f"Impact: ({x}, {y})")
-
-# # if __name__ == "__main__":
-# #     root = tk.Tk()
-# #     app = GolfUI(root)
-# #     test_data = {"detected": True, "speed": 20.5, "impact_position": (100, 200)}
-# #     app.update(test_data)
-# #     root.mainloop()
-
-# #     #test

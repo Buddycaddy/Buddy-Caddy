@@ -1,141 +1,71 @@
+# 실제 라즈베리 파이에서 작동하는 코드
+# import time
+# import board
+# import busio
+# import adafruit_ads1x15.ads1115 as ADS
+# from adafruit_ads1x15.analog_in import AnalogIn
+# import json
+
+# def setup_vibration_sensor():
+#     i2c = busio.I2C(board.SCL, board.SDA)
+#     ads = ADS.ADS1115(i2c)
+#     ads.data_rate = 250
+#     return AnalogIn(ads, ADS.P0)
+
+# def detect_vibration(chan, threshold=1.0, is_ready=None):
+#     if is_ready:
+#         with is_ready.get_lock():
+#             if not is_ready.value:
+#                 return None
+#     if chan.voltage > threshold:
+#         return {"source": "vibration_sensor", "event": "vibration_trigger", "timestamp": time.time()}
+#     return None
+
+# if __name__ == "__main__":
+#     from multiprocessing import Value
+#     chan = setup_vibration_sensor()
+#     is_ready = Value('b', True)
+#     while True:
+#         result = detect_vibration(chan, is_ready=is_ready)
+#         if result:
+#             print(json.dumps(result))
+#         time.sleep(0.004)
+
+
+# 전체 프로세스 동작 확인을 위한 진동 센서 모듈 코드
 import time
-import board
-import busio
-import adafruit_ads1x15.ads1115 as ADS
-from adafruit_ads1x15.analog_in import AnalogIn
 import json
 
+class MockAnalogIn:
+    def __init__(self):
+        self.voltage = 0.0  # 초기값 설정
 
-
-#진동 센서  output 1 or 0 예상
+    def set_voltage(self, value):
+        self.voltage = value  # 테스트를 위해 전압 설정
 
 def setup_vibration_sensor():
-    i2c = busio.I2C(board.SCL, board.SDA)
-    ads = ADS.ADS1115(i2c)
-    ads.data_rate = 250
-    return AnalogIn(ads, ADS.P0)
+    # 실제 I2C 대신 MockAnalogIn을 반환
+    return MockAnalogIn()
 
-def detect_vibration(chan, threshold=1.0):
+def detect_vibration(chan, threshold=1.0, is_ready=None):
+    if is_ready:
+        with is_ready.get_lock():
+            if not is_ready.value:
+                return None
     if chan.voltage > threshold:
-        return {"event": "vibration_trigger", "timestamp": time.time()}
+        return {"source": "vibration_sensor", "event": "vibration_trigger", "timestamp": time.time()}
     return None
 
 if __name__ == "__main__":
+    from multiprocessing import Value
     chan = setup_vibration_sensor()
-    while True:
-        result = detect_vibration(chan)
+    is_ready = Value('b', True)
+
+    # 테스트용으로 전압을 설정하여 디버깅
+    test_voltages = [0.5, 1.2, 0.8, 1.5]  # 테스트 전압 값
+    for voltage in test_voltages:
+        chan.set_voltage(voltage)  # MockAnalogIn에 전압 설정
+        result = detect_vibration(chan, is_ready=is_ready)
         if result:
             print(json.dumps(result))
-        time.sleep(0.004)  # 250Hz
-
-
-
-
-# 처음부터 다시 수정하기 전 코드들
-
-# import time
-# import datetime
-# import threading
-
-# try:
-#     import RPi.GPIO as GPIO
-#     IS_PI = True
-# except ImportError:
-#     IS_PI = False
-
-# VIBRATION_PIN = 27
-
-# def setup_vibration_sensor():
-#     if not IS_PI:
-#         return None
-#     GPIO.setmode(GPIO.BCM)
-#     GPIO.setup(VIBRATION_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-#     return VIBRATION_PIN
-
-# def detect_vibration(pin):
-#     if not IS_PI or pin is None:
-#         return False
-#     return GPIO.input(pin) == GPIO.HIGH
-
-# def vibration_sensor_process(queue, simulate=False):
-#     if simulate or not IS_PI:
-#         def simulate_vibration():
-#             while True:
-#                 time.sleep(5 + (time.time() % 4))
-#                 timestamp = datetime.datetime.now().timestamp()
-#                 queue.put({"event": "vibration_trigger", "timestamp": timestamp})
-#         threading.Thread(target=simulate_vibration, daemon=True).start()
-#         while True:
-#             time.sleep(1)
-#     else:
-#         pin = setup_vibration_sensor()
-#         try:
-#             while True:
-#                 if detect_vibration(pin):
-#                     timestamp = datetime.datetime.now().timestamp()
-#                     queue.put({"event": "vibration_trigger", "timestamp": timestamp})
-#                 time.sleep(0.004)
-#         except KeyboardInterrupt:
-#             GPIO.cleanup()
-
-
-
-
-
-# # import RPi.GPIO as GPIO
-# # import time
-# # import datetime
-
-# # VIBRATION_PIN = 27  # 사용할 핀 번호 (실제 배선에 따라 변경 필요)
-
-# # # 센서 설정 함수
-# # def setup_vibration_sensor():
-# #     GPIO.setmode(GPIO.BCM)
-# #     GPIO.setup(VIBRATION_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-# #     return VIBRATION_PIN
-
-# # # 루프 내에서 센서 감지하는 함수
-# # def detect_vibration(pin):
-# #     return GPIO.input(pin) == GPIO.HIGH
-
-# # # main.py에서 이 함수를 호출하면 됨
-# # def vibration_sensor_process(queue):
-# #     pin = setup_vibration_sensor()
-# #     try:
-# #         while True:
-# #             if detect_vibration(pin):
-# #                 timestamp = datetime.datetime.now().timestamp()
-# #                 queue.put({"event": "vibration_trigger", "timestamp": timestamp})
-# #             time.sleep(0.004)
-# #     except KeyboardInterrupt:
-# #         GPIO.cleanup()
-
-
-
-
-
-# # import time
-# # import board
-# # import busio
-# # import adafruit_ads1x15.ads1115 as ADS
-# # from adafruit_ads1x15.analog_in import AnalogIn
-# # import json
-
-# # def setup_vibration_sensor():
-# #     i2c = busio.I2C(board.SCL, board.SDA)
-# #     ads = ADS.ADS1115(i2c)
-# #     ads.data_rate = 250
-# #     return AnalogIn(ads, ADS.P0)
-
-# # def detect_vibration(chan, threshold=1.0):
-# #     if chan.voltage > threshold:
-# #         return {"event": "vibration_trigger", "timestamp": time.time()}
-# #     return None
-
-# # if __name__ == "__main__":
-# #     chan = setup_vibration_sensor()
-# #     while True:
-# #         result = detect_vibration(chan)
-# #         if result:
-# #             print(json.dumps(result))
-# #         time.sleep(0.004)  # 250Hz
+        time.sleep(0.004)
