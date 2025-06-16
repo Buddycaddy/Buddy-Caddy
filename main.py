@@ -75,6 +75,23 @@ class MainApp:
     def check_queue(self):
         while not self.queue.empty():
             data = self.queue.get()
+
+            # 추가
+            # (1) 공 감지 결과 처리
+            # if isinstance(data, dict) and "detected" in data:
+            #     if data["detected"]:  # 공을 감지한 경우
+            #         self.ui.show_message("공을 치세요")
+            #         self.ui.show_detected_image("Result/res_img.png")  # ball_detector가 저장한 이미지 경로
+            #     else:  # 공이 없는 경우
+            #         self.ui.show_message("공을 놓으세요")
+
+            if isinstance(data, dict) and "detected" in data:
+                print("호출 전")
+                self.ui.show_ball_detected(data["detected"], "Result/res_img.png" if data["detected"] else None)
+                print("호출 후")
+            # 추가
+
+
             if "detected" in data:
                 self.ui.handle_ir_detected()
             if data.get("event") == "ir_trigger":
@@ -95,6 +112,7 @@ class MainApp:
 
 if __name__ == "__main__":
     MainApp().run()
+
 
 
 

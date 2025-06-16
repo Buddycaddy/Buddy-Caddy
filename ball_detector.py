@@ -74,6 +74,15 @@ def detect_ball(frame, shot_position, radius_threshold=600):
         distance = np.sqrt((x - shot_position[0])**2 + (y - shot_position[1])**2)
         # print(f"Distance from shot position: {distance}")
         if distance < radius_threshold:
+                
+                # # 추가
+                # # 동그라미(라인) 그리기
+                # cv2.circle(frame, (x, y), r, (0, 255, 0), 2)  # 초록색 원
+
+                # # ✅ 결과 이미지 저장 (UI에 표시될 이미지)
+                # cv2.imwrite("Result/res_img.png", frame)
+                # # 추가
+
                 # 타임스탬프를 KST로 변환
                 timestamp = datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S.%f')[:-3]
                 # timestamp = time.time() + 9*3600  # UTC에서 KST로 변환
@@ -125,6 +134,10 @@ if __name__ == "__main__":
     
 
     print(json.dumps(result))  # JSON 직렬화 가능
+
+    # 추가
+    cv2.imwrite("res_img.png", frame)
+    # 추가
     
     cv2.imshow("Ball Detection", frame)
     cv2.waitKey(0)
