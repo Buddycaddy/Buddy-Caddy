@@ -281,13 +281,8 @@ class MainApp(QObject):
         sys.exit(self.app.exec_())
 
 if __name__ == "__main__":
-<<<<<<< jincheol
     try:
         app = MainApp()
         app.run()
     except Exception as e:
         logging.error(f"MainApp error: {e}")
-=======
-    MainApp().run()
-
->>>>>>> main
