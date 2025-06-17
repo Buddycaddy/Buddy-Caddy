@@ -2,12 +2,29 @@ import numpy as np
 import json
 from collections import deque
 
+def find_closest_frame(frames, target_timestamp):
+    """
+    진동 센서 타임스탬프와 가장 가까운 프레임을 검색
+    """
+    closest_frame = None
+    min_diff = float('inf')
+
+    for timestamp, frame in frames:
+        diff = abs(timestamp - target_timestamp)
+        if diff < min_diff:
+            min_diff = diff
+            closest_frame = frame
+
+    return closest_frame
+
 def analyze_impact(frames, fps=30):
     import cv2
     print("Impact analysis started")
 
     # 가장 최신 프레임(진동 감지 시점)에서 공 탐지
     frame = frames[-1] if frames else None
+    print("frame shape:", frame.shape if frame is not None else "None")
+    # cv2.imshow("Impact Frame", frame)  # 디버깅용 프레임 표시
     if frame is None:
         return {"impact_position": None}
     
