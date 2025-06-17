@@ -2,241 +2,434 @@ INFO:root:Starting ir_sensor_process
 INFO:root:MainApp initialized, processes started
 INFO:root:Starting vibration_sensor_process
 INFO:root:Starting ball_detection_process
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.495', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.495', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.573', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.573', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.642', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.642', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.694', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.694', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.772', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.772', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.844', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.844', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.904', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.904', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.956', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:22.956', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.008', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.008', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.076', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.076', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.132', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.132', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.187', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.187', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.275', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.275', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.327', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.327', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.379', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.379', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.452', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.452', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.506', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.506', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.558', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.558', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.629', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.629', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.682', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.682', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.752', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.752', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.804', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.804', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.856', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.856', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.929', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.929', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.981', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:23.981', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.036', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.036', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.111', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.111', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.163', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.163', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.216', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.216', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.294', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.294', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.346', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.346', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.399', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.399', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.455', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.455', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.508', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.508', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.560', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.560', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.626', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.626', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.688', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.688', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.747', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.747', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.818', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.818', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.897', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.897', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.993', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:24.993', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.079', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.079', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.175', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.175', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.261', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.261', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.314', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.314', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.368', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.368', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.421', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.421', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.491', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.491', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.543', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.543', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.607', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.607', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.660', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.660', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.714', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.714', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.767', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.767', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.839', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.839', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.892', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.892', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.962', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:25.962', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.014', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.014', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.096', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.096', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.148', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.148', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.201', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.201', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.253', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.253', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.333', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.333', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.386', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.386', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.439', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.439', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.496', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.496', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.549', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.549', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.612', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.612', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.671', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.671', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.724', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.724', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.776', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.776', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.828', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.828', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.913', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.913', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.966', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:26.966', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.057', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.057', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.119', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.119', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.172', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.172', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.243', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.243', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.319', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.319', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.372', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.372', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.448', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.448', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.511', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.511', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.564', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.564', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.628', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.628', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.680', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.680', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.734', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.734', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.787', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.787', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.839', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.839', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.891', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.891', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.965', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:27.965', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.017', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.017', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.080', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.080', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.132', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.132', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.204', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.204', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.262', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.262', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.317', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.317', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.370', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.370', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.422', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.422', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.492', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.492', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.545', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.545', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.598', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.598', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.650', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.650', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.704', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.704', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.756', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.756', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.808', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.808', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.860', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.860', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.923', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.923', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.975', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:28.975', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.027', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.027', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.098', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.098', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.154', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.154', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.241', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.241', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.307', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.307', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.371', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.371', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.424', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.424', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.482', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.482', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.534', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.534', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.607', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.607', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.661', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.661', 'enable_ir': True}
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.739', 'enable_ir': True}
-DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 09:54:29.739', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.099', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.099', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.158', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.158', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.213', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.213', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.266', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.266', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.319', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.319', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.371', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.371', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.424', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.424', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.499', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.552', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.499', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.552', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.604', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.604', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.657', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.657', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.712', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.712', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.785', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.785', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.838', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.838', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.909', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.909', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.983', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:56.983', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.036', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.036', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.110', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.110', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.162', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.162', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.216', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.216', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.268', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.268', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.322', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.322', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.375', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.375', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.446', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.446', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.499', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.499', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.551', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.551', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.629', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.629', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.682', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.682', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.737', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.737', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.791', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.791', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.843', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.843', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.911', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.911', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.975', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:57.975', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.033', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.033', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.086', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.086', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.139', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.139', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.204', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.204', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.256', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.256', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.310', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.310', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.362', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.362', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.449', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.449', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.502', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.502', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.554', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.554', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.612', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.612', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.664', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.664', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.728', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.728', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.788', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.788', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.842', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.842', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.894', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.894', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.947', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:58.947', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.015', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.015', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.068', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.068', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.129', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.129', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.182', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.182', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.234', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.234', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.293', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.293', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.363', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.363', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.415', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.415', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.472', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.472', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.528', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.528', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.586', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.586', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.654', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.654', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.710', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.710', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.763', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.763', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.814', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.814', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.875', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.875', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.938', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:04:59.938', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.002', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.002', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.055', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.055', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.113', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.113', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.193', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.193', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.246', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.246', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.298', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.298', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.350', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.350', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.402', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.402', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.455', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.455', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.508', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.508', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.572', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.572', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.639', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.639', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.717', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.717', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.769', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.769', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.831', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.831', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.884', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.884', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.936', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.936', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.989', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:00.989', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.041', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.041', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.110', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.110', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.176', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.176', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.230', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.230', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.283', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.283', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.339', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.339', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.391', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.391', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.444', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.444', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.496', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.496', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.563', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.563', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.635', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.635', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.688', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.688', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.744', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.744', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.797', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.797', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.850', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.850', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.903', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.903', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.957', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:01.957', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.022', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.022', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.097', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.097', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.149', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.149', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.202', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.202', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.274', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.274', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.336', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.336', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.390', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.390', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.442', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.442', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.511', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.511', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.564', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.564', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.616', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.616', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.679', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.679', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.747', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.800', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.747', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.800', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.864', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.864', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.919', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.919', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.972', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:02.972', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.025', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.025', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.078', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.078', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.131', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.131', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.184', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.184', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.237', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.237', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.290', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.290', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.347', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.347', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.406', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.406', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.500', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.500', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.553', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.553', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.619', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.619', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.671', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.671', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.724', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.724', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.777', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.777', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.846', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.846', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.898', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.898', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.951', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:03.951', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.005', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.005', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.057', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.057', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.111', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.111', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.165', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.165', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.217', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.217', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.280', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.280', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.338', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.338', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.391', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.391', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.444', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.444', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.496', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.496', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.548', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.548', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.602', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.602', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.676', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.676', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.731', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.731', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.784', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.784', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.837', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.837', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.909', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.909', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.986', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:04.986', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.038', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.038', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.104', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.104', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.179', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.179', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.231', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.231', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.283', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.283', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.344', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.344', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.421', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.421', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.496', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.496', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.548', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.548', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.601', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.601', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.676', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.676', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.729', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.729', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.782', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.782', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.857', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.857', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.911', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.911', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.963', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:05.963', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.015', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.015', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.068', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.068', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.132', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.132', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.185', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.185', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.237', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.237', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.293', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.293', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.346', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.346', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.421', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.421', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.473', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.473', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.527', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.527', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.601', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.601', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.654', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.654', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.710', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.710', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.786', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.786', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.839', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.839', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.892', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.892', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.968', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:06.968', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.020', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.020', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.073', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.073', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.141', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.141', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.222', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.222', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.300', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.300', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.352', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.352', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.405', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.405', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.457', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.457', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.510', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.510', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.563', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.563', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.615', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.615', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.668', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.668', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.721', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.721', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.774', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.774', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.829', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.829', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.882', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.882', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.935', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.935', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.988', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:07.988', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.067', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.067', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.119', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.119', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.172', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.172', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.225', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.225', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.278', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.278', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.340', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.340', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.394', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.394', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.446', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.446', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.498', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.498', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.590', 'enable_ir': True}
+DEBUG:root:Queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.590', 'enable_ir': True}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-17 10:05:08.651', 'enable_ir': True}
