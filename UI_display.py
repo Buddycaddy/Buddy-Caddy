@@ -91,7 +91,7 @@ class BallDetectionUI(QWidget):
 
 
     # 추가
-    def event(self, event):
+    def event(self, event):  # 이벤트 핸들러 메서드 추가
         if isinstance(event, QEvent) and hasattr(event, 'callback'):
             event.callback()
             return True
