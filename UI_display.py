@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtWidgets import QApplication
+from PyQt5.QtCore import QEvent  # 상단 import 필수
 import sys
 
 class BallDetectionUI(QWidget):
@@ -88,6 +89,14 @@ class BallDetectionUI(QWidget):
         self.text_label.setText("공을 놓으세요")
         self.text_label.setVisible(True)
 
+
+    # 추가
+    def event(self, event):  # 이벤트 핸들러 메서드 추가
+        if isinstance(event, QEvent) and hasattr(event, 'callback'):
+            event.callback()
+            return True
+        return super().event(event)
+    # 추가
 
 
     # 추가
