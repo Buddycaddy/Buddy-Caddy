@@ -92,56 +92,56 @@ def detect_ball(frame, shot_position, radius_threshold=600):
         "timestamp": timestamp,
         "enable_ir": False
     }
-if __name__ == "__main__":
-    # 비디오 캡처 부분 주석 처리
-    cap = cv2.VideoCapture(0)
-    shot_position = (960, 1280)  # 예: 프레임 중앙
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-        result = detect_ball(frame, shot_position)
-
- # 결과 시각화
-        if result["detected"]:
-            x, y = map(int, result["position"])  # 좌표를 int로 변환
-            r = result["radius"]
-            cv2.circle(frame, (x, y), r, (0, 255, 0), 2)  # 감지된 공 위치 표시
-            cv2.putText(frame, "Ball Detected", (x + 15, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-            print(json.dumps(result))
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    cap.release()
-
-    # # 이미지 파일로 테스트
-    # image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
-    # frame = cv2.imread(image_path)
-    # if frame is None:
-    #     print("이미지를 열 수 없습니다.")
-    #     exit()
-    # # 이미지 크기 조정 (리사이즈된 이미지를 반환값으로 저장)
-    # frame = cv2.resize(frame, (960, 1280))  # 이미지 크기 조정
-    # width, height = frame.shape[1], frame.shape[0]
-    # print(f"이미지 크기: {width}x{height}")
-    # shot_position = (960, 540)  # 예: 프레임 중앙
-    # result = detect_ball(frame, shot_position)
-
-    print(json.dumps(result))  # JSON 직렬화 가능
-
-    # 추가
-    # cv2.imwrite("res_img.png", frame)
-    # 추가
+# if __name__ == "__main__":
+#     # 비디오 캡처 부분 주석 처리
+#     cap = cv2.VideoCapture(0)
+#     shot_position = (960, 1280)  # 예: 프레임 중앙
+#     while True:
+#         ret, frame = cap.read()
+#         if not ret:
+#             break
+#         result = detect_ball(frame, shot_position)
 
 #  # 결과 시각화
-#     if result["detected"]:
-#         x, y = map(int, result["position"])  # 좌표를 int로 변환
-#         r = result["radius"]
-#         cv2.circle(frame, (x, y), r, (0, 255, 0), 2)  # 감지된 공 위치 표시
-#         cv2.putText(frame, "Ball Detected", (x + 15, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-    # print(json.dumps(result))  # JSON 직렬화 가능
+#         if result["detected"]:
+#             x, y = map(int, result["position"])  # 좌표를 int로 변환
+#             r = result["radius"]
+#             cv2.circle(frame, (x, y), r, (0, 255, 0), 2)  # 감지된 공 위치 표시
+#             cv2.putText(frame, "Ball Detected", (x + 15, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+#             print(json.dumps(result))
+#         if cv2.waitKey(1) & 0xFF == ord('q'):
+#             break
+#     cap.release()
+
+#     # # 이미지 파일로 테스트
+#     # image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
+#     # frame = cv2.imread(image_path)
+#     # if frame is None:
+#     #     print("이미지를 열 수 없습니다.")
+#     #     exit()
+#     # # 이미지 크기 조정 (리사이즈된 이미지를 반환값으로 저장)
+#     # frame = cv2.resize(frame, (960, 1280))  # 이미지 크기 조정
+#     # width, height = frame.shape[1], frame.shape[0]
+#     # print(f"이미지 크기: {width}x{height}")
+#     # shot_position = (960, 540)  # 예: 프레임 중앙
+#     # result = detect_ball(frame, shot_position)
+
+#     print(json.dumps(result))  # JSON 직렬화 가능
+
+#     # 추가
+#     # cv2.imwrite("res_img.png", frame)
+#     # 추가
+
+# #  # 결과 시각화
+# #     if result["detected"]:
+# #         x, y = map(int, result["position"])  # 좌표를 int로 변환
+# #         r = result["radius"]
+# #         cv2.circle(frame, (x, y), r, (0, 255, 0), 2)  # 감지된 공 위치 표시
+# #         cv2.putText(frame, "Ball Detected", (x + 15, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+#     # print(json.dumps(result))  # JSON 직렬화 가능
 
     
-    # cv2.imshow("Ball Detection", frame)
-    # cv2.waitKey(0)
-    cv2.destroyAllWindows()
+#     # cv2.imshow("Ball Detection", frame)
+#     # cv2.waitKey(0)
+#     cv2.destroyAllWindows()
 
