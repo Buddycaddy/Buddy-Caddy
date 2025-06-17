@@ -1,6 +1,7 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel
+from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtWidgets import QApplication
 import sys
 
 class BallDetectionUI(QWidget):

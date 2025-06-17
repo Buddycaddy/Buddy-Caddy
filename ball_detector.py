@@ -1,4 +1,4 @@
-import cv2
+# import cv2
 import numpy as np
 import time
 import json
@@ -32,7 +32,7 @@ def detect_ball(frame, shot_position, radius_threshold=600):
     
     # 초록색이 아닌 영역에서 흰색만 추출
     mask = cv2.bitwise_and(mask_white, mask_non_green)
-    cv2.imshow("Combined Mask", mask)  # 최종 마스크 표시
+    # cv2.imshow("Combined Mask", mask)  # 최종 마스크 표시
     
     # 노이즈 제거를 위한 침식과 팽창
 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     print(json.dumps(result))  # JSON 직렬화 가능
 
     # 추가
-    cv2.imwrite("res_img.png", frame)
+    # cv2.imwrite("res_img.png", frame)
     # 추가
 
 #  # 결과 시각화
