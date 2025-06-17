@@ -9,6 +9,7 @@ from datetime import datetime
 # 하단 카메라에서 공을 감지  , User에게 시작 신호 전달
 
 def detect_ball(frame, shot_position, radius_threshold=600):
+    import cv2
     # 프레임을 HSV 색상 공간으로 변환
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
@@ -69,6 +70,7 @@ def detect_ball(frame, shot_position, radius_threshold=600):
     if circles is not None:
         circles = np.int16(np.around(circles))
         x, y, r = circles[0][0]
+        print(f"Detected circle at ({x}, {y}) with radius {r}")
         distance = np.sqrt((x - shot_position[0])**2 + (y - shot_position[1])**2)
         if distance < radius_threshold:
 

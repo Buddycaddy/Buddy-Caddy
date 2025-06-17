@@ -2,7 +2,7 @@
 from ir_sensor import setup_ir_sensor
 from vibration_sensor import setup_vibration_sensor, detect_vibration
 from speed_calculator import calculate_speed
-# from impact_analyzer import analyze_impact
+from impact_analyzer import analyze_impact
 import sys
 from queue import Queue
 from ball_detector import detect_ball
@@ -13,7 +13,6 @@ from multiprocessing import Process, Queue, Value
 from collections import deque
 import time
 import logging
-
 logging.basicConfig(level=logging.DEBUG, filename="debug.log", filemode="w")
 
 class QCustomEvent(QEvent):
@@ -26,6 +25,7 @@ def ball_detection_process(queue, is_ready):
     logging.info("Starting ball_detection_process")
     image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
     frame = cv2.imread(image_path)
+    frame = cv2.resize(frame, (960, 1280))  # Mocking a frame for testing
     # cap = cv2.VideoCapture(0)
     # if not cap.isOpened():
     #     logging.error("Failed to open camera 0")

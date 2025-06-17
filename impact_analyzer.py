@@ -3,6 +3,9 @@ import json
 from collections import deque
 
 def analyze_impact(frames, fps=30):
+    import cv2
+    print("Impact analysis started")
+
     # 가장 최신 프레임(진동 감지 시점)에서 공 탐지
     frame = frames[-1] if frames else None
     if frame is None:
@@ -20,6 +23,7 @@ def analyze_impact(frames, fps=30):
     return {"source": "impact_analyzer", "impact_position": None}
 
 if __name__ == "__main__":
+    import cv2
     cap = cv2.VideoCapture(0)
     frames = deque(maxlen=5)
     while True:
