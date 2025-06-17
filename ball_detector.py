@@ -1,4 +1,4 @@
-import cv2
+# import cv2
 import numpy as np
 import time
 import json
@@ -9,6 +9,7 @@ from datetime import datetime
 # 하단 카메라에서 공을 감지  , User에게 시작 신호 전달
 
 def detect_ball(frame, shot_position, radius_threshold=600):
+    import cv2
     # 프레임을 HSV 색상 공간으로 변환
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
@@ -32,7 +33,7 @@ def detect_ball(frame, shot_position, radius_threshold=600):
     
     # 초록색이 아닌 영역에서 흰색만 추출
     mask = cv2.bitwise_and(mask_white, mask_non_green)
-    cv2.imshow("Combined Mask", mask)  # 최종 마스크 표시
+    # cv2.imshow("Combined Mask", mask)  # 최종 마스크 표시
     
     # 노이즈 제거를 위한 침식과 팽창
 
@@ -69,6 +70,7 @@ def detect_ball(frame, shot_position, radius_threshold=600):
     if circles is not None:
         circles = np.int16(np.around(circles))
         x, y, r = circles[0][0]
+        print(f"Detected circle at ({x}, {y}) with radius {r}")
         distance = np.sqrt((x - shot_position[0])**2 + (y - shot_position[1])**2)
         if distance < radius_threshold:
 
@@ -128,7 +130,7 @@ if __name__ == "__main__":
     print(json.dumps(result))  # JSON 직렬화 가능
 
     # 추가
-    cv2.imwrite("res_img.png", frame)
+    # cv2.imwrite("res_img.png", frame)
     # 추가
 
 #  # 결과 시각화
