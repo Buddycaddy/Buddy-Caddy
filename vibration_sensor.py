@@ -49,23 +49,28 @@ def setup_vibration_sensor():
     return MockAnalogIn()
 
 
-def detect_vibration(queue,chan, threshold=1.0, is_ready=None):
-    has_triggered = Value('b', False)  # 초기화 상태를 추적하는 플래그
-    chan.set_voltage(1.5)  # 초기 전압 설정
+def detect_vibration(vib_queue,impact_queue,is_ready,chan, threshold=1.0):
+    has_triggered_speed = Value('b', False)  # 속도 계산 플래그
+    has_triggered_impact = Value('b', False)  # 임팩트 분석 플래그
+
     def conditional_callback():
         with is_ready.get_lock():
-            if is_ready.value and not has_triggered.value:  # 초기화 시 한 번만 실행
-                if chan.voltage > threshold:
-                    print("진동 센서 신호 전송")
-                    has_triggered.value = True  # 이후에는 실행되지 않도록 설정
-                    queue.put({"source": "vibration_sensor", "event": "vibration_trigger", "timestamp": time.time()})
-        return None
+            if is_ready.value:
+                if not has_triggered_speed.value and chan.voltage > threshold:
+                    print("진동 센서 신호 전송 - 속도 계산")
+                    has_triggered_speed.value = True  # 이후에는 실행되지 않도록 설정
+                    vib_queue.put({"source": "vibration_sensor", "event": "vibration_trigger", "timestamp": time.time(), "action": "speed"})       
+
+                if not has_triggered_impact.value and chan.voltage > threshold:
+                    print("진동 센서 신호 전송 - 임팩트 분석")
+                    has_triggered_impact.value = True  # 이후에는 실행되지 않도록 설정
+                    impact_queue.put({"source": "vibration_sensor", "event": "vibration_trigger", "timestamp": time.time(), "action": "impact"})
 
     return conditional_callback()
 
 #실제 라즈베이 파이에서 작동하는 코드
 # def detect_vibration(chan, threshold=1.0, is_ready=None):
-#     if is_ready:
+#     if is_ready:ㄴ
 #         with is_ready.get_lock():
 #             if not is_ready.value:
 #                 return None

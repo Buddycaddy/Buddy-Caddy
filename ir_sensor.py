@@ -6,7 +6,6 @@ from gpiozero import Button, Device
 from gpiozero.pins.mock import MockFactory
 from multiprocessing import Queue, Value
 import time
-import json
 
 # Pin Factory를 MockFactory로 설정 (PC 테스트용)
 Device.pin_factory = MockFactory()
@@ -14,13 +13,12 @@ Device.pin_factory = MockFactory()
 IR_PIN = 17  # IR 센서가 연결된 GPIO 핀 번호
 
 def ir_disconnected_callback(queue):
-    timestamp = time.time()
     print("IR sensor 전송")
-    queue.put({"source": "ir_sensor", "event": "ir_trigger", "timestamp": timestamp})
+    queue.put({"source": "ir_sensor", "event": "ir_trigger", "timestamp": time.time()})
 
-    
+
 # 프로세스 동작 테스트용 코드
-def setup_ir_sensor(queue, is_ready):
+def setup_ir_sensor(ir_queue, is_ready):
     ir_sensor = Button(IR_PIN, pull_up=True)
     has_triggered = Value('b', False)  # 초기화 상태를 추적하는 플래그
 
@@ -28,7 +26,7 @@ def setup_ir_sensor(queue, is_ready):
         with is_ready.get_lock():
             if is_ready.value and not has_triggered.value:  # 초기화 시 한 번만 실행
                 print("콜백 함수 호출")
-                ir_disconnected_callback(queue)
+                ir_disconnected_callback(ir_queue)
                 has_triggered.value = True  # 이후에는 실행되지 않도록 설정
     conditional_callback()
     return ir_sensor
