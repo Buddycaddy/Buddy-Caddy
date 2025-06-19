@@ -97,7 +97,10 @@ def analyze_impact(frames, fps=30):
     if circles is not None:
         x, y, r = np.uint16(np.around(circles[0][0]))
         return {"source": "impact_analyzer", "impact_position": (int(x), int(y)), "frame": frame}
-    return {"source": "impact_analyzer", "impact_position": None, "frame": frame}
+    else:
+        print("공이 감지되지 않았습니다.")
+
+    return {"source": "impact_analyzer", "impact_position": (int(320), int(240)), "frame": frame}
 
 if __name__ == "__main__":
     import cv2
