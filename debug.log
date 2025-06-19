@@ -3,145 +3,147 @@ INFO:root:Starting ir_sensor_process
 INFO:root:Starting vibration_sensor_process
 INFO:root:Start impact analysis process
 INFO:root:MainApp initialized, processes started
-DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-19 15:41:26.531', 'enable_ir': True}
-DEBUG:root:Ball queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-19 15:41:26.531', 'enable_ir': True}
-DEBUG:root:IR queue data: {'source': 'ir_sensor', 'event': 'ir_trigger', 'timestamp': 1750315288.3825727}
+DEBUG:root:Ball detection result: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-19 16:27:10.703', 'enable_ir': True}
+DEBUG:root:Ball queue data: {'source': 'ball_detector', 'detected': True, 'position': (464, 614), 'radius': 20, 'timestamp': '2025-06-19 16:27:10.703', 'enable_ir': True}
+DEBUG:root:IR queue data: {'source': 'ir_sensor', 'event': 'ir_trigger', 'timestamp': 1750318032.5509481}
 INFO:root:Starting impact_analysis_process
 INFO:root:Video frame rate: 29.979466119096507 fps, total frames: 146
 DEBUG:root:Elapsed time: 0.00s, Target frame: 0
-DEBUG:root:Frame 0 captured at 1750315288.4957783
-DEBUG:root:Elapsed time: 0.04s, Target frame: 1
-DEBUG:root:Frame 1 captured at 1750315288.541577
-DEBUG:root:Elapsed time: 0.09s, Target frame: 2
-DEBUG:root:Frame 2 captured at 1750315288.5866635
-DEBUG:root:Elapsed time: 0.14s, Target frame: 4
-DEBUG:root:Frame 4 captured at 1750315288.632637
-DEBUG:root:Elapsed time: 0.18s, Target frame: 5
-DEBUG:root:Frame 5 captured at 1750315288.6790628
-DEBUG:root:Elapsed time: 0.23s, Target frame: 6
-DEBUG:root:Frame 6 captured at 1750315288.724887
-DEBUG:root:Elapsed time: 0.27s, Target frame: 8
-DEBUG:root:Frame 8 captured at 1750315288.7718024
-DEBUG:root:Elapsed time: 0.32s, Target frame: 9
-DEBUG:root:Frame 9 captured at 1750315288.8186495
-DEBUG:root:Elapsed time: 0.37s, Target frame: 11
-DEBUG:root:Frame 11 captured at 1750315288.8658319
-DEBUG:root:Elapsed time: 0.41s, Target frame: 12
-DEBUG:root:Frame 12 captured at 1750315288.9136145
-DEBUG:root:Elapsed time: 0.46s, Target frame: 13
-DEBUG:root:Frame 13 captured at 1750315288.960945
-DEBUG:root:Elapsed time: 0.51s, Target frame: 15
-DEBUG:root:Frame 15 captured at 1750315289.0086753
-DEBUG:root:Elapsed time: 0.56s, Target frame: 16
-DEBUG:root:Frame 16 captured at 1750315289.0564592
-DEBUG:root:Elapsed time: 0.60s, Target frame: 18
-DEBUG:root:Frame 18 captured at 1750315289.105498
-DEBUG:root:Elapsed time: 0.65s, Target frame: 19
-DEBUG:root:Frame 19 captured at 1750315289.1549766
-DEBUG:root:Elapsed time: 0.70s, Target frame: 21
-DEBUG:root:Frame 21 captured at 1750315289.206195
-DEBUG:root:Elapsed time: 0.75s, Target frame: 22
-DEBUG:root:Frame 22 captured at 1750315289.2562099
-DEBUG:root:Elapsed time: 0.80s, Target frame: 24
-DEBUG:root:Frame 24 captured at 1750315289.3075485
-DEBUG:root:Elapsed time: 0.86s, Target frame: 25
-DEBUG:root:Frame 25 captured at 1750315289.3593552
-DEBUG:root:Elapsed time: 0.91s, Target frame: 27
-DEBUG:root:Frame 27 captured at 1750315289.411399
-DEBUG:root:Elapsed time: 0.96s, Target frame: 28
-DEBUG:root:Frame 28 captured at 1750315289.451749
-DEBUG:root:Elapsed time: 1.00s, Target frame: 29
-DEBUG:root:Frame 29 captured at 1750315289.5010614
-DEBUG:root:Elapsed time: 1.05s, Target frame: 31
-DEBUG:root:Frame 31 captured at 1750315289.5535657
-DEBUG:root:Elapsed time: 1.10s, Target frame: 33
-DEBUG:root:Frame 33 captured at 1750315289.6081305
-DEBUG:root:Elapsed time: 1.16s, Target frame: 34
-DEBUG:root:Frame 34 captured at 1750315289.6623788
-DEBUG:root:Elapsed time: 1.21s, Target frame: 36
-DEBUG:root:Frame 36 captured at 1750315289.7165186
-DEBUG:root:Elapsed time: 1.27s, Target frame: 37
-DEBUG:root:Frame 37 captured at 1750315289.7666986
-DEBUG:root:Elapsed time: 1.32s, Target frame: 39
-DEBUG:root:Frame 39 captured at 1750315289.8206918
-DEBUG:root:Elapsed time: 1.37s, Target frame: 41
-DEBUG:root:Frame 41 captured at 1750315289.876058
-DEBUG:root:Elapsed time: 1.42s, Target frame: 42
-DEBUG:root:Frame 42 captured at 1750315289.9313455
-DEBUG:root:Elapsed time: 1.48s, Target frame: 44
-DEBUG:root:Frame 44 captured at 1750315289.986924
-DEBUG:root:Elapsed time: 1.54s, Target frame: 46
-DEBUG:root:Frame 46 captured at 1750315290.0426161
-DEBUG:root:Elapsed time: 1.59s, Target frame: 47
-DEBUG:root:Frame 47 captured at 1750315290.0977402
-DEBUG:root:Elapsed time: 1.65s, Target frame: 49
-DEBUG:root:Frame 49 captured at 1750315290.1525404
-DEBUG:root:Elapsed time: 1.70s, Target frame: 51
-DEBUG:root:Frame 51 captured at 1750315290.208874
-DEBUG:root:Elapsed time: 1.76s, Target frame: 52
-DEBUG:root:Frame 52 captured at 1750315290.2656198
-DEBUG:root:Elapsed time: 1.81s, Target frame: 54
-DEBUG:root:Frame 54 captured at 1750315290.3222084
-DEBUG:root:Elapsed time: 1.87s, Target frame: 56
-DEBUG:root:Frame 56 captured at 1750315290.3815014
-DEBUG:root:Elapsed time: 1.93s, Target frame: 57
-DEBUG:root:Frame 57 captured at 1750315290.4419546
-DEBUG:root:Elapsed time: 1.99s, Target frame: 59
-DEBUG:root:Frame 59 captured at 1750315290.502134
-DEBUG:root:Elapsed time: 2.05s, Target frame: 61
-DEBUG:root:Frame 61 captured at 1750315290.563088
-DEBUG:root:Elapsed time: 2.11s, Target frame: 63
-DEBUG:root:Frame 63 captured at 1750315290.626354
-DEBUG:root:Elapsed time: 2.17s, Target frame: 65
-DEBUG:root:Frame 65 captured at 1750315290.68899
-DEBUG:root:Elapsed time: 2.24s, Target frame: 67
-DEBUG:root:Frame 67 captured at 1750315290.752758
-DEBUG:root:Elapsed time: 2.30s, Target frame: 68
-DEBUG:root:Frame 68 captured at 1750315290.819568
-DEBUG:root:Elapsed time: 2.37s, Target frame: 70
-DEBUG:root:Frame 70 captured at 1750315290.8855696
-DEBUG:root:Elapsed time: 2.43s, Target frame: 72
-DEBUG:root:Frame 72 captured at 1750315290.9513035
-DEBUG:root:Elapsed time: 2.50s, Target frame: 74
-DEBUG:root:Frame 74 captured at 1750315291.0176682
-DEBUG:root:Elapsed time: 2.57s, Target frame: 76
-DEBUG:root:Frame 76 captured at 1750315291.085329
-DEBUG:root:Elapsed time: 2.63s, Target frame: 78
-DEBUG:root:Vibration queue data: {'source': 'vibration_sensor', 'event': 'vibration_trigger', 'timestamp': 1750315291.0913064, 'action': 'speed'}
+DEBUG:root:Frame 0 captured at 1750318032.6523757
+DEBUG:root:Elapsed time: 0.05s, Target frame: 1
+DEBUG:root:Frame 1 captured at 1750318032.6889398
+DEBUG:root:Elapsed time: 0.08s, Target frame: 2
+DEBUG:root:Frame 2 captured at 1750318032.7255414
+DEBUG:root:Elapsed time: 0.12s, Target frame: 3
+DEBUG:root:Frame 3 captured at 1750318032.7617493
+DEBUG:root:Elapsed time: 0.15s, Target frame: 4
+DEBUG:root:Frame 4 captured at 1750318032.8036644
+DEBUG:root:Elapsed time: 0.20s, Target frame: 5
+DEBUG:root:Frame 5 captured at 1750318032.8492358
+DEBUG:root:Elapsed time: 0.24s, Target frame: 7
+DEBUG:root:Frame 7 captured at 1750318032.8954685
+DEBUG:root:Elapsed time: 0.29s, Target frame: 8
+DEBUG:root:Frame 8 captured at 1750318032.9418542
+DEBUG:root:Elapsed time: 0.34s, Target frame: 10
+DEBUG:root:Frame 10 captured at 1750318032.9890313
+DEBUG:root:Elapsed time: 0.38s, Target frame: 11
+DEBUG:root:Frame 11 captured at 1750318033.0353343
+DEBUG:root:Elapsed time: 0.43s, Target frame: 12
+DEBUG:root:Frame 12 captured at 1750318033.0828922
+DEBUG:root:Elapsed time: 0.48s, Target frame: 14
+DEBUG:root:Frame 14 captured at 1750318033.1304965
+DEBUG:root:Elapsed time: 0.52s, Target frame: 15
+DEBUG:root:Frame 15 captured at 1750318033.1802723
+DEBUG:root:Elapsed time: 0.57s, Target frame: 17
+DEBUG:root:Frame 17 captured at 1750318033.228138
+DEBUG:root:Elapsed time: 0.62s, Target frame: 18
+DEBUG:root:Frame 18 captured at 1750318033.2756777
+DEBUG:root:Elapsed time: 0.67s, Target frame: 20
+DEBUG:root:Frame 20 captured at 1750318033.3258665
+DEBUG:root:Elapsed time: 0.72s, Target frame: 21
+DEBUG:root:Frame 21 captured at 1750318033.375784
+DEBUG:root:Elapsed time: 0.77s, Target frame: 23
+DEBUG:root:Frame 23 captured at 1750318033.4259965
+DEBUG:root:Elapsed time: 0.82s, Target frame: 24
+DEBUG:root:Frame 24 captured at 1750318033.4780698
+DEBUG:root:Elapsed time: 0.87s, Target frame: 26
+DEBUG:root:Frame 26 captured at 1750318033.5289428
+DEBUG:root:Elapsed time: 0.92s, Target frame: 27
+DEBUG:root:Frame 27 captured at 1750318033.5811367
+DEBUG:root:Elapsed time: 0.97s, Target frame: 29
+DEBUG:root:Frame 29 captured at 1750318033.6329474
+DEBUG:root:Elapsed time: 1.03s, Target frame: 30
+DEBUG:root:Frame 30 captured at 1750318033.6868622
+DEBUG:root:Elapsed time: 1.08s, Target frame: 32
+DEBUG:root:Frame 32 captured at 1750318033.72881
+DEBUG:root:Elapsed time: 1.12s, Target frame: 33
+DEBUG:root:Frame 33 captured at 1750318033.7809706
+DEBUG:root:Elapsed time: 1.17s, Target frame: 35
+DEBUG:root:Frame 35 captured at 1750318033.834838
+DEBUG:root:Elapsed time: 1.23s, Target frame: 36
+DEBUG:root:Frame 36 captured at 1750318033.8891408
+DEBUG:root:Elapsed time: 1.28s, Target frame: 38
+DEBUG:root:Frame 38 captured at 1750318033.9430103
+DEBUG:root:Elapsed time: 1.34s, Target frame: 40
+DEBUG:root:Frame 40 captured at 1750318033.998307
+DEBUG:root:Elapsed time: 1.39s, Target frame: 41
+DEBUG:root:Frame 41 captured at 1750318034.0547316
+DEBUG:root:Elapsed time: 1.45s, Target frame: 43
+DEBUG:root:Frame 43 captured at 1750318034.1097286
+DEBUG:root:Elapsed time: 1.50s, Target frame: 45
+DEBUG:root:Frame 45 captured at 1750318034.165759
+DEBUG:root:Elapsed time: 1.56s, Target frame: 46
+DEBUG:root:Frame 46 captured at 1750318034.2203088
+DEBUG:root:Elapsed time: 1.61s, Target frame: 48
+DEBUG:root:Frame 48 captured at 1750318034.2755198
+DEBUG:root:Elapsed time: 1.67s, Target frame: 50
+DEBUG:root:Frame 50 captured at 1750318034.3316038
+DEBUG:root:Elapsed time: 1.72s, Target frame: 51
+DEBUG:root:Frame 51 captured at 1750318034.3883655
+DEBUG:root:Elapsed time: 1.78s, Target frame: 53
+DEBUG:root:Frame 53 captured at 1750318034.443468
+DEBUG:root:Elapsed time: 1.84s, Target frame: 55
+DEBUG:root:Frame 55 captured at 1750318034.501059
+DEBUG:root:Elapsed time: 1.89s, Target frame: 56
+DEBUG:root:Frame 56 captured at 1750318034.5599952
+DEBUG:root:Elapsed time: 1.95s, Target frame: 58
+DEBUG:root:Frame 58 captured at 1750318034.619373
+DEBUG:root:Elapsed time: 2.01s, Target frame: 60
+DEBUG:root:Frame 60 captured at 1750318034.6807783
+DEBUG:root:Elapsed time: 2.07s, Target frame: 62
+DEBUG:root:Frame 62 captured at 1750318034.7432961
+DEBUG:root:Elapsed time: 2.14s, Target frame: 64
+DEBUG:root:Frame 64 captured at 1750318034.8067088
+DEBUG:root:Elapsed time: 2.20s, Target frame: 65
+DEBUG:root:Frame 65 captured at 1750318034.8701549
+DEBUG:root:Elapsed time: 2.26s, Target frame: 67
+DEBUG:root:Frame 67 captured at 1750318034.9345887
+DEBUG:root:Elapsed time: 2.33s, Target frame: 69
+DEBUG:root:Frame 69 captured at 1750318035.0010388
+DEBUG:root:Elapsed time: 2.39s, Target frame: 71
+DEBUG:root:Frame 71 captured at 1750318035.0661047
+DEBUG:root:Elapsed time: 2.46s, Target frame: 73
+DEBUG:root:Frame 73 captured at 1750318035.130683
+DEBUG:root:Elapsed time: 2.52s, Target frame: 75
+DEBUG:root:Frame 75 captured at 1750318035.1988406
+DEBUG:root:Elapsed time: 2.59s, Target frame: 77
+DEBUG:root:Frame 77 captured at 1750318035.2681108
+DEBUG:root:Vibration queue data: {'source': 'vibration_sensor', 'event': 'vibration_trigger', 'timestamp': 1750318035.268585, 'action': 'speed'}
 DEBUG:root:Vibration queue data: {'source': 'speed_calculator', 'speed': 1.99}
-DEBUG:root:Impact queue data: {'source': 'vibration_sensor', 'event': 'vibration_trigger', 'timestamp': 1750315291.093179, 'action': 'impact'}
-INFO:root:Vibration sensor triggered at 1750315291.093179
-DEBUG:root:Frame 78 captured at 1750315291.155052
-DEBUG:root: vib_timestamp 1750315291.093179
+DEBUG:root:Impact queue data: {'source': 'vibration_sensor', 'event': 'vibration_trigger', 'timestamp': 1750318035.2706633, 'action': 'impact'}
+INFO:root:Vibration sensor triggered at 1750318035.2706633
+DEBUG:root:Elapsed time: 2.66s, Target frame: 79
+DEBUG:root:Frame 79 captured at 1750318035.3241248
+DEBUG:root: vib_timestamp 1750318035.2706633
 INFO:root:Closest frame found
 DEBUG:root:Impact analysis result: {'source': 'impact_analyzer', 'impact_position': (320, 240), 'frame': array([[[145, 139, 156],
         [147, 141, 158],
         [149, 143, 160],
         ...,
-        [154, 144, 164],
-        [151, 141, 161],
-        [149, 139, 159]],
+        [152, 144, 166],
+        [149, 141, 163],
+        [146, 138, 160]],
 
        [[145, 139, 156],
         [147, 141, 158],
         [149, 143, 160],
         ...,
-        [151, 141, 161],
-        [147, 137, 157],
-        [145, 135, 155]],
+        [150, 142, 164],
+        [145, 137, 159],
+        [136, 128, 150]],
 
        [[145, 139, 156],
         [147, 141, 158],
         [149, 143, 160],
         ...,
-        [146, 138, 151],
-        [142, 134, 147],
-        [138, 130, 143]],
+        [142, 139, 146],
+        [132, 131, 133],
+        [121, 120, 122]],
 
        ...,
 
        [[209, 163, 182],
-        [209, 163, 182],
+        [210, 164, 183],
         [210, 164, 183],
         ...,
         [166, 150, 169],
@@ -149,7 +151,7 @@ DEBUG:root:Impact analysis result: {'source': 'impact_analyzer', 'impact_positio
         [164, 148, 167]],
 
        [[208, 162, 181],
-        [209, 163, 182],
+        [210, 164, 183],
         [212, 166, 185],
         ...,
         [167, 151, 170],
@@ -157,7 +159,7 @@ DEBUG:root:Impact analysis result: {'source': 'impact_analyzer', 'impact_positio
         [165, 149, 168]],
 
        [[209, 163, 182],
-        [210, 164, 183],
+        [212, 166, 185],
         [212, 166, 185],
         ...,
         [168, 152, 171],
@@ -168,30 +170,30 @@ DEBUG:root:Impact queue data: {'source': 'impact_analyzer', 'impact_position': (
         [147, 141, 158],
         [149, 143, 160],
         ...,
-        [154, 144, 164],
-        [151, 141, 161],
-        [149, 139, 159]],
+        [152, 144, 166],
+        [149, 141, 163],
+        [146, 138, 160]],
 
        [[145, 139, 156],
         [147, 141, 158],
         [149, 143, 160],
         ...,
-        [151, 141, 161],
-        [147, 137, 157],
-        [145, 135, 155]],
+        [150, 142, 164],
+        [145, 137, 159],
+        [136, 128, 150]],
 
        [[145, 139, 156],
         [147, 141, 158],
         [149, 143, 160],
         ...,
-        [146, 138, 151],
-        [142, 134, 147],
-        [138, 130, 143]],
+        [142, 139, 146],
+        [132, 131, 133],
+        [121, 120, 122]],
 
        ...,
 
        [[209, 163, 182],
-        [209, 163, 182],
+        [210, 164, 183],
         [210, 164, 183],
         ...,
         [166, 150, 169],
@@ -199,7 +201,7 @@ DEBUG:root:Impact queue data: {'source': 'impact_analyzer', 'impact_position': (
         [164, 148, 167]],
 
        [[208, 162, 181],
-        [209, 163, 182],
+        [210, 164, 183],
         [212, 166, 185],
         ...,
         [167, 151, 170],
@@ -207,7 +209,7 @@ DEBUG:root:Impact queue data: {'source': 'impact_analyzer', 'impact_position': (
         [165, 149, 168]],
 
        [[209, 163, 182],
-        [210, 164, 183],
+        [212, 166, 185],
         [212, 166, 185],
         ...,
         [168, 152, 171],
