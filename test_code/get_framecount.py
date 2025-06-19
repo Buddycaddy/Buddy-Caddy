@@ -35,7 +35,7 @@ def get_frame_count(video_path):
 
 if __name__ == "__main__":
     # Example usage
-    video_path = "./resource/test2.mp4"  # Same video path as used in impact_analyzer.py
+    video_path = "./resource/segment_1.mp4"  # Same video path as used in impact_analyzer.py
     frame_count = get_frame_count(video_path)
     if frame_count is not None:
         print(f"Total number of frames: {frame_count}")
