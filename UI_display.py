@@ -102,10 +102,10 @@ class BallDetectionUI(QMainWindow):
         # 결과 이미지 (중앙)
         self.result_image_label1 = QLabel(self)
         self.result_image_label1.setGeometry(
-            (self.w - section_width) // 2 + 230,
+            (self.w - section_width) // 2 + 300,
             margin_top,
-            section_width+40,
-            image_height+40
+            section_width + 60,
+            image_height + 60
         )
         self.result_image_label1.setAlignment(Qt.AlignCenter)
 
