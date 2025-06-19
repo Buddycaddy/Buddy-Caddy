@@ -299,6 +299,19 @@ class BallDetectionUI(QMainWindow):
         self.text_label.setText("공을 놓으세요")
         self.text_label.setVisible(True)
 
+
+    # 추가
+    def event(self, event):  # 이벤트 핸들러 메서드 추가
+        if isinstance(event, QEvent) and hasattr(event, 'callback'):
+            event.callback()
+            return True
+        return super().event(event)
+    # 추가
+
+
+    # 추가
+    # BallDetectionUI 클래스 내부에 아래 두 메서드 추가
+
     def show_message(self, message):
         if hasattr(self, 'text_label'):
             self.text_label.setText(message)
