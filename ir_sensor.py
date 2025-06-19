@@ -25,7 +25,7 @@ def setup_ir_sensor(ir_queue, is_ready):
     def conditional_callback():
         with is_ready.get_lock():
             if is_ready.value and not has_triggered.value:  # 초기화 시 한 번만 실행
-                print("콜백 함수 호출")
+                # print("콜백 함수 호출")
                 ir_disconnected_callback(ir_queue)
                 has_triggered.value = True  # 이후에는 실행되지 않도록 설정
     conditional_callback()
