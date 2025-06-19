@@ -73,7 +73,7 @@ class BallDetectionUI(QMainWindow):
         self.result_text_label.setAlignment(Qt.AlignCenter)
         self.result_text_label.setWordWrap(True)
         self.result_text_label.setStyleSheet("""
-            font-size: 60px;
+            font-size: 50px;
             color: white;
             background-color: rgba(0,0,0,120);
             border-radius: 30px;
@@ -102,10 +102,10 @@ class BallDetectionUI(QMainWindow):
         # 결과 이미지 (중앙)
         self.result_image_label1 = QLabel(self)
         self.result_image_label1.setGeometry(
-            (self.w - section_width) // 2 + 230,
+            (self.w - section_width) // 2 + 300,
             margin_top,
-            section_width,
-            image_height
+            section_width + 60,
+            image_height + 60
         )
         self.result_image_label1.setAlignment(Qt.AlignCenter)
 
