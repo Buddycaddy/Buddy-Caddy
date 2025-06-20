@@ -9,7 +9,7 @@ from ball_detector import detect_ball
 from UI_display import BallDetectionUI
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import QTimer, QEvent
-from multiprocessing import Process, Queue, Value, Manager
+from multiprocessing import Process, Queue, Value, Manager, Event
 from collections import deque
 import time
 import logging
@@ -27,7 +27,7 @@ impact_queue = Manager.Queue()
 is_ready = Value('b', False)
 
 
-def ball_detection_process():
+def ball_detection_process(pause_event):
     time.sleep(5)  # Wait for other processes to initialize
 
     # image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
@@ -45,6 +45,7 @@ def ball_detection_process():
     shot_position = (width//2, height//2)
     while True:
         # ret, frame = cap.read()
+        pause_event.wait()  # Wait for the pause event to be cleared
         ret = True  # Mocking the frame read for testing
         if ret:
             result = detect_ball(frame, shot_position)
@@ -148,6 +149,9 @@ class MainApp:
         self.ui = BallDetectionUI(self.width, self.height)
         self.ui.move(self.geometry.x(), self.geometry.y())
         self.ui.showFullScreen()
+        
+        self.pause_event = Event()
+        self.pause_event.set()  # 초기 상태는 실행 상태
 
         self.start_processes()
 
@@ -155,6 +159,7 @@ class MainApp:
         self.timer.timeout.connect(self.check_queues)
         self.timer.start(50)
         logging.info("MainApp initialized, processes started")
+  
 
     def start_processes(self):
         logging.info("Starting ball_detection_process")
@@ -173,6 +178,13 @@ class MainApp:
 
         logging.info("Start impact analysis process")
         self.p4 = Process(target=impact_analysis_process, args=(self.shared_data,))
+
+    def pause_process(self):
+        logging.info("Pausing ball_detection_process")
+        self.pause_event.clear()  # 프로세스를 일시 중지
+    def resume_process(self):
+        logging.info("Resuming ball_detection_process")
+        self.pause_event.set()  # 프로세스를 다시 시작
 
     def reset_queues(self):
         # Clear existing queues and create new ones
