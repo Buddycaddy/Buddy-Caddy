@@ -7,9 +7,10 @@ from send_event import QCustomEvent
 from os.path import exists
 
 class BallDetectionUI(QMainWindow):
-    def __init__(self, screen_width, screen_height):
+    def __init__(self, screen_width, screen_height,main_app):
         super().__init__()
 
+        self.main_app = main_app
         self.setWindowTitle("공 감지 UI")
         self.setWindowFlags(Qt.FramelessWindowHint)
         self.setGeometry(0, 0, screen_width, screen_height)
@@ -137,6 +138,7 @@ class BallDetectionUI(QMainWindow):
             290, 80
         )
         self.next_button.clicked.connect(self.reset_state)
+        self,main_app.resume_process()
         self.next_button.setVisible(False)
 
         self.text_label.setVisible(False)
