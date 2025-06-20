@@ -227,12 +227,26 @@ class BallDetectionUI(QMainWindow):
             self.fade_in_widget(self.text_label)
             self.fade_out_widget(self.result_image_label1)
 
-    def handle_ir_detected(self):
+    def handle_ir_detected(self,low_frame=None):
         print(self.state)
         if self.state == "WAIT_BALL":
             self.text_label.setText("공을 치세요")
             self.fade_in_widget(self.text_label)
             self.state = "READY_TO_HIT"
+             # 임팩트 프레임 표시
+            if low_frame is not None:
+                height, width, channel = low_frame.shape
+                bytes_per_line = 3 * width
+                q_image = QImage(low_frame.data, width, height, bytes_per_line, QImage.Format_RGB888)
+                q_image = q_image.rgbSwapped()  # BGR to RGB
+                pixmap = QPixmap.fromImage(q_image)
+                pixmap = pixmap.scaled(self.result_image_label1.width(), self.result_image_label1.height(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
+                self.result_image_label1.setPixmap(pixmap)
+                self.result_image_label1.setVisible(True)
+
+            
+
+            QTimer.singleShot(2000, self.reset_state)
 
     def handle_camera_detected(self, speed, impact_position, impact_frame=None):
         if self.state == "READY_TO_HIT":

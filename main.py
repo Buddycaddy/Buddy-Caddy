@@ -14,6 +14,7 @@ from collections import deque
 import time
 import logging
 from PyQt5.QtGui import QKeyEvent
+from picamera2 import Picamera2
 
 logging.basicConfig(level=logging.DEBUG, filename="debug.log", filemode="w")
 
@@ -28,16 +29,18 @@ is_ready = Value('b', False)
 
 def ball_detection_process():
     time.sleep(5)  # Wait for other processes to initialize
-    import cv2
-    image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
-    frame = cv2.imread(image_path)
-    frame = cv2.resize(frame, (960, 1280))  # Mocking a frame for testing
-    # cap = cv2.VideoCapture(0)
-    # if not cap.isOpened():
-    #     logging.error("Failed to open camera 0)
-    #     exit()
-    # keypad_arrow_left_alt_key
-    # width, height = cap.get(cv2.CAP_PROP_FRAME_WIDTH), cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
+
+    # image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
+    # frame = cv2.imread(image_path)
+    # frame = cv2.resize(frame, (960, 1280))  # Mocking a frame for testing
+    low_camera = Picamera2(1)  # Second camera
+    low_camera.start()
+    frame = low_camera.capture_array()  # Capture a frame from the camera
+
+    if frame is None:
+        logging.error("Failed to open low camera")
+        exit()
+
     width, height = frame.shape[1], frame.shape[0]
     shot_position = (width//2, height//2)
     while True:
@@ -45,10 +48,11 @@ def ball_detection_process():
         ret = True  # Mocking the frame read for testing
         if ret:
             result = detect_ball(frame, shot_position)
-            ball_queue.put(result)
-
+            if result["detected"]:
+                result["frame"] = frame  # 프레임 데이터를 결과에 추가
+            
+            ball_queue.put(result)  # 결과와 프레임을 큐에 넣음
             logging.debug(f"Ball detection result: {result}")
-            break
         else:
             logging.error("Failed to read frame from camera 0")
         time.sleep(0.033)
@@ -197,7 +201,10 @@ class MainApp:
                     with is_ready.get_lock():
                         is_ready.value = True
                         print("공 탐지")
-                    QApplication.postEvent(self.ui, QCustomEvent(self.ui.handle_ir_detected))
+                    low_cam_frame = data.get("frame")
+                    QApplication.postEvent(self.ui, QCustomEvent(self.ui.handle_ir_detected,low_cam_frame))
+                elif data.get("source") == "ball_detector" and data.get("stable"):
+                    self.p1.pause()  # Pause ball detection process
             except Exception as e:
                 logging.error(f"Ball queue error: {e}")
 
