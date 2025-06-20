@@ -156,8 +156,5 @@ if __name__ == "__main__":
 #         cv2.putText(frame, "Ball Detected", (x + 15, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
     # print(json.dumps(result))  # JSON 직렬화 가능
 
-    
-    # cv2.imshow("Ball Detection", frame)
-    # cv2.waitKey(0)
-    cv2.destroyAllWindows()
+
 

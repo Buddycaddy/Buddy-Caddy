@@ -13,6 +13,3 @@ if __name__ == "__main__":
     test_data = {"ir_timestamp": 1634567890.123, "vib_timestamp": 1634567890.223}
     result = calculate_speed(test_data["ir_timestamp"], test_data["vib_timestamp"])
     print(json.dumps(result))
-
-
-
