@@ -182,6 +182,7 @@ class MainApp:
     def pause_process(self):
         logging.info("Pausing ball_detection_process")
         self.pause_event.clear()  # 프로세스를 일시 중지
+        
     def resume_process(self):
         logging.info("Resuming ball_detection_process")
         self.pause_event.set()  # 프로세스를 다시 시작
