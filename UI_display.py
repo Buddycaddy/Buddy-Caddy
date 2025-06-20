@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QMainWindow, QLabel, QApplication, QGraphicsOpacityEffect
+from PyQt5.QtWidgets import QMainWindow, QLabel, QApplication, QGraphicsOpacityEffect, QPushButton
 from PyQt5.QtGui import QPixmap, QImage, QTransform
 from PyQt5.QtCore import Qt, QTimer, QEvent, QPropertyAnimation
 import sys
@@ -66,7 +66,6 @@ class BallDetectionUI(QMainWindow):
         section_width = int(self.w * 0.3)
         image_height = int(self.h * 0.9)
         margin_top = (self.h - image_height) // 2
-        margin_bottom = 50
 
         # 속도 텍스트 (좌측)
         self.result_text_label = QLabel(self)
@@ -79,7 +78,7 @@ class BallDetectionUI(QMainWindow):
             border-radius: 30px;
             padding: 5px;
         """)
-        self.result_text_label.setContentsMargins(5, 5, 5, 5)
+        # self.result_text_label.setContentsMargins(5, 5, 5, 5)
 
 
         # self.result_text_label.setGeometry(
@@ -121,6 +120,24 @@ class BallDetectionUI(QMainWindow):
         # self.result_image_label2.setAlignment(Qt.AlignCenter)
 
         # ------------ 수정된 배치 끝 ------------
+
+
+        self.next_button = QPushButton("🏑 다시하기", self)
+        self.next_button.setStyleSheet("""
+            font-size: 40px;
+            padding: 10px 20px;
+            background-color: #87CEFA;  /* 하늘색 */
+            color: white;
+            border: 3px solid #1E90FF;  /* 파란색 테두리 */
+            border-radius: 10px;
+        """)
+        self.next_button.setGeometry(
+            self.w - 340,  # 화면 우측 상단 위치
+            40,            # 상단 여백
+            290, 80
+        )
+        self.next_button.clicked.connect(self.reset_state)
+        self.next_button.setVisible(False)
 
         self.text_label.setVisible(False)
         self.result_text_label.setVisible(False)
@@ -173,7 +190,10 @@ class BallDetectionUI(QMainWindow):
             event.callback()
             return True
         return super().event(event)
+    
 
+
+##
     def show_message(self, message):
         if hasattr(self, 'text_label'):
             self.text_label.setText(message)
@@ -226,6 +246,10 @@ class BallDetectionUI(QMainWindow):
             self.text_label.setText("공을 놓으세요")
             self.fade_in_widget(self.text_label)
             self.fade_out_widget(self.result_image_label1)
+##
+
+
+
 
     def handle_ir_detected(self):
         print(self.state)
@@ -238,12 +262,6 @@ class BallDetectionUI(QMainWindow):
         if self.state == "READY_TO_HIT":
             self.state = "SHOW_RESULT"
             self.fade_out_widget(self.text_label)
-
-            # if speed is not None:
-            #     self.result_text_label.setText(f"💨속도: {speed} km/h")
-            #     # self.result_text_label.setText(f"🏑속도: {speed} km/h")
-            # else:
-            #     self.result_text_label.setText("속도: N/A")
 
             if speed is not None and impact_position is not None:
                 x, y = impact_position
@@ -258,19 +276,11 @@ class BallDetectionUI(QMainWindow):
             if impact_frame is not None:
                 import cv2
 
-                # 👉 원본 이미지를 그대로 사용 (마커 없음)
-                orig = impact_frame.copy()
-
-                # 👉 마커를 그린 복사본
                 frame_with_marker = impact_frame.copy()
                 if impact_position is not None:
                     x, y = impact_position
-
-                    print(f"감지된 충격 위치 좌표: x={x}, y={y}")
-
                     cv2.circle(frame_with_marker, (x, y), 20, (0, 0, 255), 3)
 
-                # QPixmap 생성
                 def to_pixmap(cv_img):
                     height, width, channel = cv_img.shape
                     bytes_per_line = 3 * width
@@ -295,8 +305,8 @@ class BallDetectionUI(QMainWindow):
                 self.fade_in_widget(self.result_image_label1)
                 # self.fade_in_widget(self.result_image_label2)
 
-
-            QTimer.singleShot(2000, self.reset_state)
+                self.next_button.setVisible(True)
+                self.fade_in_widget(self.next_button)
 
     def reset_state(self):
         self.state = "WAIT_BALL"
@@ -305,6 +315,7 @@ class BallDetectionUI(QMainWindow):
         self.fade_out_widget(self.result_text_label)
         self.fade_out_widget(self.result_image_label1)
         # self.fade_out_widget(self.result_image_label2)
+        self.fade_out_widget(self.next_button)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -316,6 +327,3 @@ if __name__ == "__main__":
     window.move(geometry.x(), geometry.y())
     window.showFullScreen()
     sys.exit(app.exec_())
-
-
-

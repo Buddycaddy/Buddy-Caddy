@@ -144,4 +144,3 @@ def detect_ball(frame, shot_position, radius_threshold=600):
 #     # cv2.imshow("Ball Detection", frame)
 #     # cv2.waitKey(0)
 #     cv2.destroyAllWindows()
-
