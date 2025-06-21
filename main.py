@@ -1,4 +1,4 @@
-from ir_sensor import setup_ir_sensor
+from ir_sensor import setup_ir_sensors
 from vibration_sensor import setup_vibration_sensor, detect_vibration
 from speed_calculator import calculate_speed
 from impact_analyzer import analyze_impact, find_closest_frame
@@ -15,6 +15,8 @@ import time
 import logging
 from PyQt5.QtGui import QKeyEvent
 from picamera2 import Picamera2
+import RPi.GPIO as GPIO
+import threading
 
 logging.basicConfig(level=logging.DEBUG, filename="debug.log", filemode="w")
 
@@ -28,23 +30,21 @@ is_ready = Value('b', False)
 
 
 def ball_detection_process(pause_event):
-    time.sleep(5)  # Wait for other processes to initialize
-
+    time.sleep(2)  
     # image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
     # frame = cv2.imread(image_path)
     # frame = cv2.resize(frame, (960, 1280))  # Mocking a frame for testing
     low_camera = Picamera2(1)  # Second camera
     low_camera.start()
-    frame = low_camera.capture_array()  # Capture a frame from the camera
-
-    if frame is None:
-        logging.error("Failed to open low camera")
-        exit()
-
-    frame = frame[0:200, 100:500, :]
-    width, height = frame.shape[1], frame.shape[0]
+    
     prev_position = None  # Initialize previous position
     while True:
+        frame = low_camera.capture_array()  # Capture a frame from the camera
+
+        if frame is None:
+            logging.error("Failed to open low camera")
+            exit()
+        frame = frame[0:200, 100:500, :]
         # ret, frame = cap.read()
         pause_event.wait()  # Wait for the pause event to be cleared
         ret = True  # Mocking the frame read for testing
@@ -64,11 +64,32 @@ def ball_detection_process(pause_event):
             logging.error("Failed to read frame from camera 0")
         time.sleep(0.033)
 
-def ir_sensor_process():
-    time.sleep(6)  # 공 탐지 후 1초 뒤 IR 센서 신호
-    setup_ir_sensor(ir_queue, is_ready)
-    while True:
-        time.sleep(0.1)
+def ir_sensor_process(ir_queue, is_ready):
+    IR_PINS = [18, 23, 24]
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+
+    def ir_disconnected_callback(pin):
+        print(f"IR sensor {pin} triggered at {time.time()}")
+        with is_ready.get_lock():
+            if is_ready.value:
+                ir_queue.put({"source": "ir_sensor", "event": "ir_trigger", "pin": pin, "timestamp": time.time()})
+                logging.debug(f"IR data sent to queue: pin {pin}")
+
+    for pin in IR_PINS:
+        GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+        GPIO.add_event_detect(
+            pin,
+            GPIO.FALLING,
+            callback=ir_disconnected_callback,
+            bouncetime=200  # 디바운싱 시간 증가
+        )
+        print(f"IR sensor on pin {pin} initialized")
+    try:
+        while True:
+            time.sleep(0.1)
+    finally:
+        GPIO.cleanup()
 
 def vibration_sensor_process():
     time.sleep(7.7)  # test speed_calculator
@@ -144,7 +165,9 @@ class MainApp(QObject):
         super().__init__()
         self.shared_data = Manager.dict()  # 공유 데이터 생성
         self.shared_data["vib_timestamp"] = None  # 초기값 설정
-        self.shared_data["ir_timestamp"] = None
+        self.shared_data["ir_18_timestamp"] = None
+        self.shared_data["ir_23_timestamp"] = None
+        self.shared_data["ir_24_timestamp"] = None
         self.shared_data["impact_position"] = None
         self.shared_data["speed"] = None
 
@@ -189,14 +212,15 @@ class MainApp(QObject):
         self.p1.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
-        logging.info("Starting ir_sensor_process")
-        self.p2 = Process(target=ir_sensor_process)
-        self.p2.start()
+        
+        self.p2 = threading.Thread(target=ir_sensor_process, args=(ir_queue, is_ready))
+        self.p2.daemon = True  # 메인 스레드 종료 시 함께 종료
+        # self.p2.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
         logging.info("Starting vibration_sensor_process")
         self.p3 = Process(target=vibration_sensor_process)
-        self.p3.start()
+        # self.p3.start()
 
         logging.info("Start impact analysis process")
         self.p4 = Process(target=impact_analysis_process, args=(self.shared_data,))
@@ -234,9 +258,13 @@ class MainApp(QObject):
                 logging.debug(f"Ball queue data: {data}")
                 if data.get("source") == "ball_detector" and data.get("enable_ir"):
                     with is_ready.get_lock():
-                        is_ready.value = True
-                        print("공 탐지")
+                        if not is_ready.value:
+                            is_ready.value = True
+                            logging.info("Starting ir_sensor_process")
+                            self.p2.start()  # Start IR sensor 
+                        # print("공 탐지")
                     low_cam_frame = data.get("frame")
+                    # print(f"Low camera frame shape: {low_cam_frame.shape if low_cam_frame is not None else 'None'}")
                     QApplication.postEvent(self.ui, QCustomEvent(self.ui.handle_ir_detected,low_cam_frame))
                 elif data.get("source") == "ball_detector" and data.get("stable"):
                     self.p1.pause()  # Pause ball detection process
@@ -249,7 +277,22 @@ class MainApp(QObject):
                 data = ir_queue.get()
                 logging.debug(f"IR queue data: {data}")
                 if data.get("source") == "ir_sensor" and data.get("event") == "ir_trigger":
-                    self.shared_data["ir_timestamp"] = data["timestamp"]
+                    pin_num = data.get("pin")
+                    if pin_num == 18 and self.shared_data["ir_23_timestamp"] is not None:
+                        self.shared_data["ir_18_timestamp"] = data["timestamp"]
+                        calculate_speed(
+                            self.shared_data["ir_23_timestamp"],
+                            self.shared_data["ir_18_timestamp"]
+                        )
+                    elif pin_num == 23 :
+                        self.shared_data["ir_23_timestamp"] = data["timestamp"]
+                        # 첫번쨰
+                    elif pin_num == 24 and self.shared_data["ir_23_timestamp"] is not None:
+                        self.shared_data["ir_24_timestamp"] = data["timestamp"]
+                        calculate_speed(
+                            self.shared_data["ir_23_timestamp"],
+                            self.shared_data["ir_24_timestamp"]
+                        )
                     # Start impact analysis process
                     self.p4.start()
             except Exception as e:
@@ -297,10 +340,12 @@ class MainApp(QObject):
 
     def close_all(self):
         # 프로세스 종료
-        for proc in [getattr(self, attr, None) for attr in ['p1', 'p2', 'p3', 'p4']]:
+        for attr in ['p1', 'p3', 'p4']:  # p2(Thread)는 제외
+            proc = getattr(self, attr, None)
             if proc and hasattr(proc, 'is_alive') and proc.is_alive():
                 proc.terminate()
                 proc.join()
+        # 스레드는 종료 신호만 보내고 강제 종료하지 않음
         # 카메라 리소스 해제
         try:
             if hasattr(self, 'ui') and hasattr(self.ui, 'cam') and self.ui.cam:

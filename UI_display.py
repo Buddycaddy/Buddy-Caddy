@@ -5,6 +5,7 @@ import sys
 import numpy as np
 from send_event import QCustomEvent
 from os.path import exists
+import cv2
 
 class BallDetectionUI(QMainWindow):
     def __init__(self, screen_width, screen_height,main_app):
@@ -109,6 +110,15 @@ class BallDetectionUI(QMainWindow):
         )
         self.result_image_label1.setAlignment(Qt.AlignCenter)
 
+        self.result_image_label2 = QLabel(self)
+        self.result_image_label2.setGeometry(
+            (self.w - section_width) // 2 ,
+            margin_top+150,
+            section_width + 60,
+            image_height + 60
+        )
+        self.result_image_label2.setAlignment(Qt.AlignCenter)
+
         # 이미지 하나만 할거라 일단 두번째 이미지에 해당하는 코드들 주석 처리
         # # 추출 그래픽 (우측)
         # self.result_image_label2 = QLabel(self)
@@ -177,10 +187,6 @@ class BallDetectionUI(QMainWindow):
         animation.start()
         widget._fade_animation = animation
 
-    def customEvent(self, event):
-        if isinstance(event, QCustomEvent):
-            event.execute()
-
     def show_main_ui(self):
         print("Showing main UI...")
         self.fade_out_widget(self.splash_container, 800)
@@ -189,7 +195,7 @@ class BallDetectionUI(QMainWindow):
 
     def event(self, event):
         if isinstance(event, QEvent) and hasattr(event, 'callback'):
-            event.callback()
+            event.callback(event.arg)
             return True
         return super().event(event)
     
@@ -253,26 +259,44 @@ class BallDetectionUI(QMainWindow):
 
 
 
-    def handle_ir_detected(self,low_frame=None):
-        print(self.state)
-        if self.state == "WAIT_BALL":
-            self.text_label.setText("공을 치세요")
-            self.fade_in_widget(self.text_label)
-            self.state = "READY_TO_HIT"
-             # 임팩트 프레임 표시
-            if low_frame is not None:
+    def handle_ir_detected(self, low_frame=None):
+        if low_frame is not None:
+            if low_frame.shape[2] == 4:
+                # OpenCV BGRA → RGBA 변환
+                rgba_frame = cv2.cvtColor(low_frame, cv2.COLOR_BGRA2RGBA)
+                height, width, channel = rgba_frame.shape
+                bytes_per_line = 4 * width
+                q_image = QImage(rgba_frame.data, width, height, bytes_per_line, QImage.Format_RGBA8888)
+            else:
+                # 3채널 처리 (기존대로)
                 height, width, channel = low_frame.shape
                 bytes_per_line = 3 * width
                 q_image = QImage(low_frame.data, width, height, bytes_per_line, QImage.Format_RGB888)
-                q_image = q_image.rgbSwapped()  # BGR to RGB
-                pixmap = QPixmap.fromImage(q_image)
-                pixmap = pixmap.scaled(self.result_image_label1.width(), self.result_image_label1.height(), Qt.KeepAspectRatio, Qt.SmoothTransformation)
-                self.result_image_label1.setPixmap(pixmap)
-                self.result_image_label1.setVisible(True)
+                q_image = q_image.rgbSwapped()
 
-            
+            pixmap = QPixmap.fromImage(q_image)
+            pixmap = pixmap.scaled(
+                self.result_image_label2.width(),
+                self.result_image_label2.height(),
+                Qt.KeepAspectRatio,
+                Qt.SmoothTransformation
+            )
 
-            QTimer.singleShot(2000, self.reset_state)
+            self.result_image_label2.setPixmap(pixmap)
+            self.result_image_label2.setVisible(True)
+
+            if self.state == "WAIT_BALL":
+                self.text_label.setText("공을 치세요")
+                self.fade_in_widget(self.text_label)
+                self.fade_in_widget(self.result_image_label2)
+                self.state = "READY_TO_HIT"
+
+            elif self.state == "READY_TO_HIT":
+                # 애니메이션 없이 프레임만 즉시 교체
+                self.state = "READY_TO_HIT"
+
+                pass  # 위에서 setPixmap만 하면 됨
+   
 
     def handle_camera_detected(self, speed, impact_position, impact_frame=None):
         if self.state == "READY_TO_HIT":
