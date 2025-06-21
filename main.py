@@ -8,7 +8,7 @@ from queue import Queue
 from ball_detector import detect_ball
 from UI_display import BallDetectionUI
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import QTimer, QEvent
+from PyQt5.QtCore import QTimer, QEvent, QObject, Qt
 from multiprocessing import Process, Queue, Value, Manager, Event
 from collections import deque
 import time
@@ -41,17 +41,23 @@ def ball_detection_process(pause_event):
         logging.error("Failed to open low camera")
         exit()
 
+    frame = frame[0:200, 100:500, :]
     width, height = frame.shape[1], frame.shape[0]
-    shot_position = (width//2, height//2)
+    prev_position = None  # Initialize previous position
     while True:
         # ret, frame = cap.read()
         pause_event.wait()  # Wait for the pause event to be cleared
         ret = True  # Mocking the frame read for testing
         if ret:
-            result = detect_ball(frame, shot_position)
+            result = detect_ball(frame, prev_position)
             if result["detected"]:
-                result["frame"] = frame  # 프레임 데이터를 결과에 추가
-            
+                prev_position = result.get("prev_position")
+                if result["stable"]:
+                    result["enable_ir"] = True
+                    result["frame"] = frame  # 프레임 데이터를 결과에 추가
+                prev_position = result.get("prev_position")
+            else:
+                result["enable_ir"]= False            
             ball_queue.put(result)  # 결과와 프레임을 큐에 넣음
             logging.debug(f"Ball detection result: {result}")
         else:
@@ -133,25 +139,34 @@ def impact_analysis_process(shared_data):
     cap.release()
     logging.info("Impact analysis process completed")
 
-class MainApp:
+class MainApp(QObject):
     def __init__(self):
+        super().__init__()
         self.shared_data = Manager.dict()  # 공유 데이터 생성
         self.shared_data["vib_timestamp"] = None  # 초기값 설정
         self.shared_data["ir_timestamp"] = None
         self.shared_data["impact_position"] = None
         self.shared_data["speed"] = None
 
+        self.pause_event = Event()           # ← 이 줄을 BallDetectionUI 생성보다 먼저!
+        self.pause_event.set()  # 초기 상태는 실행 상태
+
         self.app = QApplication(sys.argv)
         screens = self.app.screens()
         target_screen = screens[1] if len(screens) > 1 else screens[0]
         self.geometry = target_screen.geometry()
-        self.width, self.height = self.geometry.width(), self.geometry.height()
-        self.ui = BallDetectionUI(self.width, self.height)
-        self.ui.move(self.geometry.x(), self.geometry.y())
-        self.ui.showFullScreen()
-        
-        self.pause_event = Event()
-        self.pause_event.set()  # 초기 상태는 실행 상태
+
+        # 화면의 절반 크기 계산
+        self.width = self.geometry.width() // 2
+        self.height = self.geometry.height() // 2
+
+        # 중앙 위치 계산
+        center_x = self.geometry.x() + (self.geometry.width() - self.width) // 2
+        center_y = self.geometry.y() + (self.geometry.height() - self.height) // 2
+
+        self.ui = BallDetectionUI(self.width, self.height, self)
+        self.ui.move(center_x, center_y)
+        self.ui.show()
 
         self.start_processes()
 
@@ -159,11 +174,18 @@ class MainApp:
         self.timer.timeout.connect(self.check_queues)
         self.timer.start(50)
         logging.info("MainApp initialized, processes started")
-  
+
+        self.app.installEventFilter(self)  # 이벤트 필터 등록
+
+    def eventFilter(self, obj, event):
+        if event.type() == QEvent.KeyPress and event.key() == Qt.Key_Q:
+            self.close_all()
+            return True
+        return False
 
     def start_processes(self):
         logging.info("Starting ball_detection_process")
-        self.p1 = Process(target=ball_detection_process)
+        self.p1 = Process(target=ball_detection_process, args=(self.pause_event,))
         self.p1.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
@@ -272,6 +294,21 @@ class MainApp:
                     logging.info(f"Vibration sensor triggered at {self.shared_data['vib_timestamp']}")
             except Exception as e:
                 logging.error(f"Impact queue error: {e}")
+
+    def close_all(self):
+        # 프로세스 종료
+        for proc in [getattr(self, attr, None) for attr in ['p1', 'p2', 'p3', 'p4']]:
+            if proc and hasattr(proc, 'is_alive') and proc.is_alive():
+                proc.terminate()
+                proc.join()
+        # 카메라 리소스 해제
+        try:
+            if hasattr(self, 'ui') and hasattr(self.ui, 'cam') and self.ui.cam:
+                self.ui.cam.stop()
+        except Exception as e:
+            logging.error(f"Error stopping camera: {e}")
+        # 윈도우 종료
+        self.app.quit()
 
     def run(self):
         sys.exit(self.app.exec_())
