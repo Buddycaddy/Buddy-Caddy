@@ -1,10 +1,13 @@
 from PyQt5.QtCore import QEvent
 
 class QCustomEvent(QEvent):
-    def __init__(self, callback , frame=None):
+    def __init__(self, callback, arg=None):
         super().__init__(QEvent.User)
         self.callback = callback
-        self.frame = frame
+        self.arg = arg
 
-    def execute(self):
-        self.callback()
+    def execute(self,arg):
+        if arg is not None:
+            self.callback(arg)
+        else:
+            self.callback()
