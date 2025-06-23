@@ -12,11 +12,9 @@ IR_PINS = [18, 23, 24]
 #18 -> 후측 하단
 #23 -> 전측 하단
 #24 -> 후측 상단
-# def ir_disconnected_callback(queue, pin):
-#     print(f"IR sensor {pin} 전송")
-#     queue.put({"source": "ir_sensor", "event": "ir_trigger", "pin": pin, "timestamp": time.time()})
 
 
+#for debug purposes
 
 def setup_ir_sensors(ir_queue, is_ready):
     """IR 센서 초기화"""
