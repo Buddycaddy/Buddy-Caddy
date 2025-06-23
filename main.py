@@ -214,9 +214,18 @@ class MainApp(QObject):
         self.app.installEventFilter(self)  # 이벤트 필터 등록
 
     def eventFilter(self, obj, event):
-        if event.type() == QEvent.KeyPress and event.key() == Qt.Key_Q:
-            self.close_all()
-            return True
+        if event.type() == QEvent.KeyPress:
+            if event.key() == Qt.Key_Q:  # Q 키를 누르면 종료
+                self.close_all()
+                return True
+            elif event.key() == Qt.Key_Space:  # 스페이스 바를 누르면 self.p4 실행
+                if not self.p4.is_alive():  # self.p4가 실행 중이 아니면 실행
+                    logging.info("Space bar pressed, starting impact_analysis_process")
+                    self.shared_data["ir_23_timestamp"] = time.time()  # 현재 시간을 ir_23_timestamp에 저장
+                    self.p4.start()
+                else:
+                    logging.info("Space bar pressed, but impact_analysis_process is already running")
+                return True
         return False
 
     def start_processes(self):
