@@ -140,19 +140,37 @@ def vibration_sensor_process():
         time.sleep(0.004)
 
 def impact_analysis_process(shared_data):
+    print(f"ir(23) 센서 입력 시간 : {shared_data['ir_23_timestamp']}")
+    start_time = time.time()
+    print(f"프레임 append 시작 시간 : {start_time}")
     logging.info("Starting impact_analysis_process")
-    frames = deque(maxlen=60)  # 최대 120개의 프레임 저장
+    frames = deque(maxlen=60)  # 최대 60개의 프레임 저장
+
     while True:
         frame = front_camera.capture_array()  # Capture a frame from the camera
 
         if frame is None:
-            logging.error("Failed to open low camera")
+            logging.error("Failed to open front camera")
             exit()
-        frame = frame[0:480, 0:640]
-        # ret, frame = cap.read()
+
+        frame = frame[0:480, 0:640]  # Crop the frame
         ret = True  # Mocking the frame read for testing
         if ret:
-            frames.append(frame)
+            frames.append(frame,time.time())  # Add frame to the deque
+            logging.debug(f"Frame added to deque, current size: {len(frames)}")
+
+        # Check if the deque is full
+        if len(frames) == frames.maxlen:
+            logging.info("Deque is full, analyzing frames")
+            print(f"프레임 append 끝 시간 : {time.time()}")
+            print(f"fps : {len(frames) / (time.time() - start_time):.2f}")
+            analyze_impact(list(frames))  # Pass frames to analyze_frame
+            #queue에다 넣고 exit
+            
+            
+            frames.clear()  # Clear the deque after analysis
+            logging.info("Deque cleared after analysis")
+            exit()  # Exit after processing the frames
 
 
 class MainApp(QObject):
@@ -213,9 +231,9 @@ class MainApp(QObject):
         # self.p2.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
-        logging.info("Starting vibration_sensor_process")
-        self.p3 = Process(target=vibration_sensor_process)
-        # self.p3.start()
+        # logging.info("Starting vibration_sensor_process")
+        # self.p3 = Process(target=vibration_sensor_process)
+        # # self.p3.start()
 
         logging.info("Start impact analysis process")
         self.p4 = Process(target=impact_analysis_process, args=(self.shared_data,))
@@ -281,7 +299,7 @@ class MainApp(QObject):
                         )
                     elif pin_num == 23 :
                         self.shared_data["ir_23_timestamp"] = data["timestamp"]
-                        # 첫번쨰
+                        # 첫번쨰 ir 센서
                         self.p4.start()  # get frame from front camera
                     elif pin_num == 24 and self.shared_data["ir_23_timestamp"] is not None:
                         self.shared_data["ir_24_timestamp"] = data["timestamp"]
