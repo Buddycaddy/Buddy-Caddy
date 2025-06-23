@@ -1,4 +1,4 @@
-from ir_sensor import setup_ir_sensors
+
 from vibration_sensor import setup_vibration_sensor, detect_vibration
 from speed_calculator import calculate_speed
 from impact_analyzer import analyze_impact, find_closest_frame
@@ -26,18 +26,45 @@ ball_queue = Manager.Queue()
 ir_queue = Manager.Queue()
 vib_queue = Manager.Queue()
 impact_queue = Manager.Queue()
+
 is_ready = Value('b', False)
 
+#카메라 설정
+low_camera = Picamera2(1)  # Second camera
+front_camera = Picamera2(0)  # First camera
 
-def ball_detection_process(pause_event):
+
+# Select desired sensor mode (1332x990 at 120 fps) for first camera
+sensor_modes = front_camera.sensor_modes
+desired_mode = None
+for mode in sensor_modes:
+    if mode['size'] == (1332, 990) and mode['fps'] >= 120:
+        desired_mode = mode
+        break
+
+config1 = front_camera.create_video_configuration(
+    main={"format": "RGB888", "size": (1332, 990)},  # Keep full sensor resolution
+    controls={"FrameRate": 120},
+    sensor={
+        "output_size": desired_mode['size'],
+        "bit_depth": desired_mode['bit_depth']
+    }
+)
+
+# 변수 설정
+#####################################################################################################################
+
+
+def ball_detection_process():
     time.sleep(2)  
     # image_path = "resource/lower_test1.jpg"  # 테스트할 이미지 경로
     # frame = cv2.imread(image_path)
     # frame = cv2.resize(frame, (960, 1280))  # Mocking a frame for testing
-    low_camera = Picamera2(1)  # Second camera
+    # low_camera = Picamera2(1)  # Second camera
     low_camera.start()
     
     prev_position = None  # Initialize previous position
+    count = 0  # Initialize count for debugging
     while True:
         frame = low_camera.capture_array()  # Capture a frame from the camera
 
@@ -46,23 +73,29 @@ def ball_detection_process(pause_event):
             exit()
         frame = frame[0:200, 100:500, :]
         # ret, frame = cap.read()
-        pause_event.wait()  # Wait for the pause event to be cleared
         ret = True  # Mocking the frame read for testing
         if ret:
             result = detect_ball(frame, prev_position)
             if result["detected"]:
                 prev_position = result.get("prev_position")
+                result["enable_ir"] = True
+                result["frame"] = frame  # 프레임 데이터를 결과에 추가
                 if result["stable"]:
-                    result["enable_ir"] = True
-                    result["frame"] = frame  # 프레임 데이터를 결과에 추가
-                prev_position = result.get("prev_position")
+                    count += 1
             else:
                 result["enable_ir"]= False            
             ball_queue.put(result)  # 결과와 프레임을 큐에 넣음
             logging.debug(f"Ball detection result: {result}")
         else:
             logging.error("Failed to read frame from camera 0")
-        time.sleep(0.033)
+
+        if count >= 5:  #
+            logging.info("Ball detection is stable, breaking the loop")
+            result["enable_front_camera"] = True  # Enable front camera
+            ball_queue.put(result)  # Put the final result in the queue
+            break
+        time.sleep(0.33)
+    low_camera.stop()  # 카메라 정지
 
 def ir_sensor_process(ir_queue, is_ready):
     IR_PINS = [18, 23, 24]
@@ -107,58 +140,38 @@ def vibration_sensor_process():
         time.sleep(0.004)
 
 def impact_analysis_process(shared_data):
-    import cv2
-    logging.info("Starting impact_analysis_process")
-    frames = deque(maxlen=30)  # 최대 30개의 프레임 저장
-
-    video_path = "./resource/segment_2.mp4"  # Video file for testing
-    cap = cv2.VideoCapture(video_path)
-    if not cap.isOpened():
-        logging.error("Failed to open video file")
-        impact_queue.put({"source": "impact_analyzer", "impact_position": None, "frame": None})
-        return
-
-    total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-    video_duration = 4.87   # seconds, as specified
-    frame_rate = total_frames / video_duration
-    logging.info(f"Video frame rate: {frame_rate} fps, total frames: {total_frames}")
-
+    print(f"ir(23) 센서 입력 시간 : {shared_data['ir_23_timestamp']}")
     start_time = time.time()
+    print(f"프레임 append 시작 시간 : {start_time}")
+    logging.info("Starting impact_analysis_process")
+    frames = deque(maxlen=60)  # 최대 60개의 프레임 저장
 
     while True:
-        with is_ready.get_lock():
-            if is_ready.value:
-                elapsed_time = time.time() - start_time
-                target_frame = int(elapsed_time * frame_rate) % total_frames
-                logging.debug(f"Elapsed time: {elapsed_time:.2f}s, Target frame: {target_frame}")
+        frame = front_camera.capture_array()  # Capture a frame from the camera
 
-                cap.set(cv2.CAP_PROP_POS_FRAMES, target_frame)
-                ret, frame = cap.read()
-                if ret:
-                    timestamp = time.time()
-                    frames.append((timestamp, frame))
-                    logging.debug(f"Frame {target_frame} captured at {timestamp}")
-                else:
-                    logging.error(f"Failed to read frame {target_frame}")
-                    break
+        if frame is None:
+            logging.error("Failed to open front camera")
+            exit()
 
-        if shared_data["vib_timestamp"] is not None:
-            logging.debug(f" vib_timestamp {shared_data['vib_timestamp']}")
-            closest_frame = find_closest_frame(frames, shared_data["vib_timestamp"])
-            if closest_frame is not None:
-                logging.info("Closest frame found")
-                result = analyze_impact([closest_frame])
-                impact_queue.put(result)
-                logging.debug(f"Impact analysis result: {result}")
-                print("Impact analysis finished ")
-                break
-            else:
-                logging.warning("No matching frame found for vibration timestamp")
+        frame = frame[0:480, 0:640]  # Crop the frame
+        ret = True  # Mocking the frame read for testing
+        if ret:
+            frames.append(frame,time.time())  # Add frame to the deque
+            logging.debug(f"Frame added to deque, current size: {len(frames)}")
 
-        time.sleep(0.033)
+        # Check if the deque is full
+        if len(frames) == frames.maxlen:
+            logging.info("Deque is full, analyzing frames")
+            print(f"프레임 append 끝 시간 : {time.time()}")
+            print(f"fps : {len(frames) / (time.time() - start_time):.2f}")
+            analyze_impact(list(frames))  # Pass frames to analyze_frame
+            #queue에다 넣고 exit
+            
+            
+            frames.clear()  # Clear the deque after analysis
+            logging.info("Deque cleared after analysis")
+            exit()  # Exit after processing the frames
 
-    cap.release()
-    logging.info("Impact analysis process completed")
 
 class MainApp(QObject):
     def __init__(self):
@@ -171,7 +184,7 @@ class MainApp(QObject):
         self.shared_data["impact_position"] = None
         self.shared_data["speed"] = None
 
-        self.pause_event = Event()           # ← 이 줄을 BallDetectionUI 생성보다 먼저!
+        self.pause_event = Event()         
         self.pause_event.set()  # 초기 상태는 실행 상태
 
         self.app = QApplication(sys.argv)
@@ -201,14 +214,23 @@ class MainApp(QObject):
         self.app.installEventFilter(self)  # 이벤트 필터 등록
 
     def eventFilter(self, obj, event):
-        if event.type() == QEvent.KeyPress and event.key() == Qt.Key_Q:
-            self.close_all()
-            return True
+        if event.type() == QEvent.KeyPress:
+            if event.key() == Qt.Key_Q:  # Q 키를 누르면 종료
+                self.close_all()
+                return True
+            elif event.key() == Qt.Key_Space:  # 스페이스 바를 누르면 self.p4 실행
+                if not self.p4.is_alive():  # self.p4가 실행 중이 아니면 실행
+                    logging.info("Space bar pressed, starting impact_analysis_process")
+                    self.shared_data["ir_23_timestamp"] = time.time()  # 현재 시간을 ir_23_timestamp에 저장
+                    self.p4.start()
+                else:
+                    logging.info("Space bar pressed, but impact_analysis_process is already running")
+                return True
         return False
 
     def start_processes(self):
         logging.info("Starting ball_detection_process")
-        self.p1 = Process(target=ball_detection_process, args=(self.pause_event,))
+        self.p1 = Process(target=ball_detection_process, args=())
         self.p1.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
@@ -218,9 +240,9 @@ class MainApp(QObject):
         # self.p2.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
-        logging.info("Starting vibration_sensor_process")
-        self.p3 = Process(target=vibration_sensor_process)
-        # self.p3.start()
+        # logging.info("Starting vibration_sensor_process")
+        # self.p3 = Process(target=vibration_sensor_process)
+        # # self.p3.start()
 
         logging.info("Start impact analysis process")
         self.p4 = Process(target=impact_analysis_process, args=(self.shared_data,))
@@ -266,8 +288,8 @@ class MainApp(QObject):
                     low_cam_frame = data.get("frame")
                     # print(f"Low camera frame shape: {low_cam_frame.shape if low_cam_frame is not None else 'None'}")
                     QApplication.postEvent(self.ui, QCustomEvent(self.ui.handle_ir_detected,low_cam_frame))
-                elif data.get("source") == "ball_detector" and data.get("stable"):
-                    self.p1.pause()  # Pause ball detection process
+                elif data.get("source") == "ball_detector" and data.get("enable_front_camera"):
+                    front_camera.start(config1)  # Start front camera with the specified configuration
             except Exception as e:
                 logging.error(f"Ball queue error: {e}")
 
@@ -286,7 +308,8 @@ class MainApp(QObject):
                         )
                     elif pin_num == 23 :
                         self.shared_data["ir_23_timestamp"] = data["timestamp"]
-                        # 첫번쨰
+                        # 첫번쨰 ir 센서
+                        self.p4.start()  # get frame from front camera
                     elif pin_num == 24 and self.shared_data["ir_23_timestamp"] is not None:
                         self.shared_data["ir_24_timestamp"] = data["timestamp"]
                         calculate_speed(
