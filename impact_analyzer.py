@@ -31,7 +31,7 @@ def analyze_impact(frames, motion_threshold=20, save_folder="impact_analyze"):
         dict: Impact analysis result containing the ball position and frame.
     """
     print("Impact analysis started")
-
+    print(len(frames), "frames received for analysis")
     # Ensure the save folder exists
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)
@@ -48,13 +48,16 @@ def analyze_impact(frames, motion_threshold=20, save_folder="impact_analyze"):
     upper_white = np.array([180, 30, 255])
 
     # Iterate through frames to detect motion
-    for i, (timestamp, frame) in enumerate(frames):
+    for i, (frame,timestamp) in enumerate(frames):
         # Save the frame to the impact_analyze folder
         frame_filename = os.path.join(save_folder, f"frame_{i:03d}.jpg")
+        print("shape", frame.shape)
+        rgba_frame = cv2.cvtColor(frame, cv2.COLOR_BGRA2RGBA)
         cv2.imwrite(frame_filename, frame)
+        # cv2.imshow("frame", frame)
 
         # Convert frame to grayscale for optical flow
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        gray = cv2.cvtColor(rgba_frame, cv2.COLOR_BGR2GRAY)
 
         if prev_gray is not None:
             # Calculate dense optical flow using Farneback method
@@ -76,7 +79,7 @@ def analyze_impact(frames, motion_threshold=20, save_folder="impact_analyze"):
     # Analyze all saved frames for ball detection
     for i, (timestamp, frame) in enumerate(frames):
         # Convert the frame to HSV
-        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        hsv = cv2.cvtColor(rgba_frame, cv2.COLOR_BGR2HSV)
 
         # Create masks for green and white regions
         mask_green = cv2.inRange(hsv, lower_green, upper_green)
@@ -94,6 +97,8 @@ def analyze_impact(frames, motion_threshold=20, save_folder="impact_analyze"):
             (x, y), radius = cv2.minEnclosingCircle(largest_contour)
             impact_position = (int(x), int(y))
             print(f"Ball detected in frame {i} at position {impact_position} with radius {int(radius)}")
+        
+
 
     if impact_position is not None:
         return {"source": "impact_analyzer", "impact_position": impact_position, "frame": impact_frame}

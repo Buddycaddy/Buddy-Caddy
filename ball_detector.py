@@ -70,7 +70,7 @@ if __name__ == "__main__":
     prev_position = None
     while True:
         frame = cam.capture_array()
-        frame = frame[0:200, 100:500, :]
+        frame = frame[0:200, 50:400, :]
         # 프레임 타입, shape, dtype 출력
         print("frame type:", type(frame), "shape:", getattr(frame, "shape", None), "dtype:", getattr(frame, "dtype", None))
         if frame is None:

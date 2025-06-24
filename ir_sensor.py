@@ -1,14 +1,15 @@
 import RPi.GPIO as GPIO
-from gpiozero import Button
+# from gpiozero import Button
 # from gpiozero import Button, Device
 # from gpiozero.pins.mock import MockFactory
+from gpiozero import InputDevice
 from multiprocessing import Queue, Value
 import time
 
 # Pin Factory를 MockFactory로 설정 (PC 테스트용)
 # Device.pin_factory = MockFactory()
 
-IR_PINS = [18, 23, 24]
+IR_PINS = [18, 23, 24 , 17, 27 ,22]
 #18 -> 후측 하단
 #23 -> 전측 하단
 #24 -> 후측 상단

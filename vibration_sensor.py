@@ -1,4 +1,4 @@
-# 실제 라즈베리 파이에서 작동하는 코드
+# # 실제 라즈베리 파이에서 작동하는 코드
 # import time
 # import board
 # import busio
@@ -18,6 +18,7 @@
 #             if not is_ready.value:
 #                 return None
 #     if chan.voltage > threshold:
+#         print("Vibration detected:", chan.voltage)
 #         return {"source": "vibration_sensor", "event": "vibration_trigger", "timestamp": time.time()}
 #     return None
 
@@ -27,8 +28,8 @@
 #     is_ready = Value('b', True)
 #     while True:
 #         result = detect_vibration(chan, is_ready=is_ready)
-#         if result:
-#             print(json.dumps(result))
+#         # if result:
+#         #     print(json.dumps(result))
 #         time.sleep(0.004)
 
 
@@ -78,16 +79,40 @@ def detect_vibration(vib_queue,impact_queue,is_ready,chan, threshold=1.0):
 #         return {"source": "vibration_sensor", "event": "vibration_trigger", "timestamp": time.time()}
 #     return None
 
-if __name__ == "__main__":
-    from multiprocessing import Value
-    chan = setup_vibration_sensor()
-    is_ready = Value('b', True)
+# if __name__ == "__main__":
+#     from multiprocessing import Value
+#     chan = setup_vibration_sensor()
+#     is_ready = Value('b', True)
 
-    # 테스트용으로 전압을 설정하여 디버깅
-    test_voltages = [0.5, 1.2, 0.8, 1.5]  # 테스트 전압 값
-    for voltage in test_voltages:
-        chan.set_voltage(voltage)  # MockAnalogIn에 전압 설정
-        result = detect_vibration(chan, is_ready=is_ready)
-        if result:
-            print(json.dumps(result))
-        time.sleep(0.004)
+#     # 테스트용으로 전압을 설정하여 디버깅
+#     test_voltages = [0.5, 1.2, 0.8, 1.5]  # 테스트 전압 값
+#     for voltage in test_voltages:
+#         chan.set_voltage(voltage)  # MockAnalogIn에 전압 설정
+#         result = detect_vibration(chan, is_ready=is_ready)
+#         if result:
+#             print(json.dumps(result))
+#         time.sleep(0.004)
+
+
+# import time
+# import board
+# import busio
+# import adafruit_ads1x15.ads1115 as ADS
+# from adafruit_ads1x15.analog_in import AnalogIn
+
+# # I2C 초기화
+# i2c = busio.I2C(board.SCL, board.SDA)
+# ads = ADS.ADS1115(i2c)
+
+# # A0 채널 선택
+# channel = AnalogIn(ads, ADS.P0)
+
+# # 무한 루프에서 값 읽기
+# try:
+#     while True:
+#         value = channel.value  # 원시 ADC 값
+#         voltage = channel.voltage  # 전압 값 (단위: V)
+#         print(f"Raw Value: {value}, Voltage: {voltage:.2f}V")
+#         time.sleep(0.5)  # 0.5초 대기
+# except KeyboardInterrupt:
+#     print("프로그램 종료")

@@ -18,8 +18,13 @@ from picamera2 import Picamera2
 import RPi.GPIO as GPIO
 import threading
 
-logging.basicConfig(level=logging.DEBUG, filename="debug.log", filemode="w")
 
+
+#5 맨앞
+#6,13 중간 상단,하단  
+#18,23,24 맨뒤  위/ 중간 /아래
+
+logging.basicConfig(level=logging.DEBUG, filename="debug.log", filemode="w")
 # 전역 변수 선언
 Manager = Manager()
 ball_queue = Manager.Queue()
@@ -41,15 +46,19 @@ for mode in sensor_modes:
     if mode['size'] == (1332, 990) and mode['fps'] >= 120:
         desired_mode = mode
         break
-
+# Create video configuration for first camera with specific sensor mode
 config1 = front_camera.create_video_configuration(
-    main={"format": "RGB888", "size": (1332, 990)},  # Keep full sensor resolution
+    main={"format": "RGB888", "size": (640, 480)},  # Keep full sensor resolution
     controls={"FrameRate": 120},
     sensor={
         "output_size": desired_mode['size'],
         "bit_depth": desired_mode['bit_depth']
     }
 )
+#5 맨앞
+#6,13 중간 상단,하단  
+#18,23,24 맨뒤  위/ 중간 /아래
+IR_PINS = [5, 6, 13,18,23,24]
 
 # 변수 설정
 #####################################################################################################################
@@ -71,7 +80,7 @@ def ball_detection_process():
         if frame is None:
             logging.error("Failed to open low camera")
             exit()
-        frame = frame[0:200, 100:500, :]
+        frame = frame[0:200, 50:400, :]
         # ret, frame = cap.read()
         ret = True  # Mocking the frame read for testing
         if ret:
@@ -98,7 +107,7 @@ def ball_detection_process():
     low_camera.stop()  # 카메라 정지
 
 def ir_sensor_process(ir_queue, is_ready):
-    IR_PINS = [18, 23, 24]
+
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
 
@@ -144,43 +153,45 @@ def impact_analysis_process(shared_data):
     start_time = time.time()
     print(f"프레임 append 시작 시간 : {start_time}")
     logging.info("Starting impact_analysis_process")
-    frames = deque(maxlen=60)  # 최대 60개의 프레임 저장
-
+    frames1 = deque(maxlen=120)  # 최대 60개의 프레임 저장
+    # front_camera.start()
+    
     while True:
-        frame = front_camera.capture_array()  # Capture a frame from the camera
-
-        if frame is None:
+        frame1 = front_camera.capture_array()  # Capture a frame from the camera
+    
+        if frame1 is None:
             logging.error("Failed to open front camera")
             exit()
 
-        frame = frame[0:480, 0:640]  # Crop the frame
-        ret = True  # Mocking the frame read for testing
-        if ret:
-            frames.append(frame,time.time())  # Add frame to the deque
-            logging.debug(f"Frame added to deque, current size: {len(frames)}")
+        # frame1 = frame1[0:480, 0:640]  # Crop the frame
+        frames1.append((frame1,time.time()))  # Add frame to the deque
+        logging.debug(f"Frame added to deque, current size: {len(frames1)}")
 
         # Check if the deque is full
-        if len(frames) == frames.maxlen:
+        if len(frames1) == frames1.maxlen:
             logging.info("Deque is full, analyzing frames")
             print(f"프레임 append 끝 시간 : {time.time()}")
-            print(f"fps : {len(frames) / (time.time() - start_time):.2f}")
-            analyze_impact(list(frames))  # Pass frames to analyze_frame
+            print(f"fps : {len(frames1) / (time.time() - start_time):.2f}")
+            analyze_impact(list(frames1))  # Pass frames to analyze_frame
             #queue에다 넣고 exit
             
-            
-            frames.clear()  # Clear the deque after analysis
+            frames1.clear()  # Clear the deque after analysis
             logging.info("Deque cleared after analysis")
             exit()  # Exit after processing the frames
-
+        elif len(frames1) == 0:
+            logging.warning("프레임 큐(frames1)에 프레임이 하나도 들어오지 않았습니다!")
+        else:
+            logging.debug(f"현재 프레임 큐(frames1) 크기: {len(frames1)}")
 
 class MainApp(QObject):
     def __init__(self):
         super().__init__()
         self.shared_data = Manager.dict()  # 공유 데이터 생성
         self.shared_data["vib_timestamp"] = None  # 초기값 설정
-        self.shared_data["ir_18_timestamp"] = None
-        self.shared_data["ir_23_timestamp"] = None
-        self.shared_data["ir_24_timestamp"] = None
+        # ir 센서 타임스탬프 초기화
+        self.shared_data["ir_1st_timestamp"] = None
+        self.shared_data["ir_2nd_timestamp"] = None
+
         self.shared_data["impact_position"] = None
         self.shared_data["speed"] = None
 
@@ -207,6 +218,7 @@ class MainApp(QObject):
         self.start_processes()
 
         self.timer = QTimer()
+        
         self.timer.timeout.connect(self.check_queues)
         self.timer.start(50)
         logging.info("MainApp initialized, processes started")
@@ -230,7 +242,10 @@ class MainApp(QObject):
 
     def start_processes(self):
         logging.info("Starting ball_detection_process")
-        self.p1 = Process(target=ball_detection_process, args=())
+        front_camera.configure(config1) 
+        front_camera.start()
+
+        self.p1 = threading.Thread(target=ball_detection_process, args=())
         self.p1.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
@@ -240,12 +255,12 @@ class MainApp(QObject):
         # self.p2.start()
         time.sleep(1)  # 프로세스 시작 후 1초 대기
 
-        # logging.info("Starting vibration_sensor_process")
+        # logging.info("Starting vibration_sensor_process")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
         # self.p3 = Process(target=vibration_sensor_process)
         # # self.p3.start()
 
         logging.info("Start impact analysis process")
-        self.p4 = Process(target=impact_analysis_process, args=(self.shared_data,))
+        self.p4 = threading.Thread(target=impact_analysis_process, args=(self.shared_data,))
 
     def pause_process(self):
         logging.info("Pausing ball_detection_process")
@@ -290,34 +305,46 @@ class MainApp(QObject):
                     QApplication.postEvent(self.ui, QCustomEvent(self.ui.handle_ir_detected,low_cam_frame))
                 elif data.get("source") == "ball_detector" and data.get("enable_front_camera"):
                     front_camera.start(config1)  # Start front camera with the specified configuration
+        
             except Exception as e:
                 logging.error(f"Ball queue error: {e}")
 
         # Check IR sensor queue
         while not ir_queue.empty():
+            #5 공 뒤
+            #6,13 중간 상단,하단  
+            #18,23,24 맨뒤  위/ 중간 /아래
             try:
                 data = ir_queue.get()
                 logging.debug(f"IR queue data: {data}")
                 if data.get("source") == "ir_sensor" and data.get("event") == "ir_trigger":
                     pin_num = data.get("pin")
-                    if pin_num == 18 and self.shared_data["ir_23_timestamp"] is not None:
-                        self.shared_data["ir_18_timestamp"] = data["timestamp"]
-                        calculate_speed(
-                            self.shared_data["ir_23_timestamp"],
-                            self.shared_data["ir_18_timestamp"]
-                        )
-                    elif pin_num == 23 :
-                        self.shared_data["ir_23_timestamp"] = data["timestamp"]
-                        # 첫번쨰 ir 센서
-                        self.p4.start()  # get frame from front camera
-                    elif pin_num == 24 and self.shared_data["ir_23_timestamp"] is not None:
-                        self.shared_data["ir_24_timestamp"] = data["timestamp"]
-                        calculate_speed(
-                            self.shared_data["ir_23_timestamp"],
-                            self.shared_data["ir_24_timestamp"]
-                        )
-                    # Start impact analysis process
-                    self.p4.start()
+
+                    #############################################################
+                    if  pin_num == 5: 
+                        # Start impact analysis process
+                        self.p4.start()
+                    #####################################################
+                    elif pin_num == 6 or pin_num == 13:
+                        if self.shared_data["ir_1st_timestamp"] is None:
+                            self.shared_data["ir_1st_timestamp"] = data["timestamp"]
+                            logging.info(f"IR sensor 6 or 13 triggered at {self.shared_data['ir_1st_timestamp']}")
+                        else:
+                            logging.warning("IR sensor 6 or 13 triggered but already has ir_1st_timestamp set")
+                    ##############################################################
+                    elif pin_num == 18 or pin_num == 23 or pin_num == 24:
+                        if self.shared_data["ir_2nd_timestamp"] is not None:
+                            self.shared_data["ir_2nd_timestamp"] = data["timestamp"]
+                            logging.info(f"IR sensor 18 or 23 or 24 triggered at {self.shared_data['ir_2nd_timestamp']}")
+                        else:
+                            logging.warning("IR sensor 18 or 23 or 24 triggered but already has ir_2nd_timestamp set")
+
+
+                if self.shared_data['ir_1st_timestamp'] is not None and self.shared_data['ir_2nd_timestamp'] is not None:
+                    speed_result = calculate_speed(self.shared_data['ir_1st_timestamp'],self.shared_data['ir_2nd_timestamp'])
+                    self.shared_data["speed"] = speed_result["speed"]
+
+
             except Exception as e:
                 logging.error(f"IR queue error: {e}")
 
