@@ -1,6 +1,15 @@
 # Golfvision-Tracker
 
-![Golfvision-Tracker  example](resource/test2.png)
+<table>
+  <tr>
+    <td>
+      <img src="Result/test_ex1.png" alt="Golfvision-Tracker Lower camera example" width="400"/>
+    </td>
+    <td>
+      <img src="Result/test_ex2.png" alt="Golfvision-Tracker Another example" width="400"/>
+    </td>
+  </tr>
+</table>
 
 
 
