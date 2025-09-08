@@ -1,6 +1,6 @@
 # Golfvision-Tracker
-## Example
-![Golfvision-Tracker Lower camera example](Result/Ball Detection_screenshot.png)
+
+![Golfvision-Tracker  example](resource/test2.png)
 
 
 
