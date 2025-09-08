@@ -1,14 +1,22 @@
 # Golfvision-Tracker
 
+## Example
+
 <table>
   <tr>
-    <td>
+    <td style="text-align: center;">
       <img src="Result/test_ex1.png" alt="Golfvision-Tracker Lower camera example" width="400"/>
+    </td>
+    <td style="text-align: center;">
+      <img src="Result/test_ex2.png" alt="Golfvision-Tracker Another example" width="400"/>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center;">
       <p>Golfvision Upper Camera</p>
     </td>
-    <td>
-      <img src="Result/test_ex2.png" alt="Golfvision-Tracker Another example" width="400"/>
-      <p>Golfvision Lower Camera</p>
+    <td style="text-align: center;">
+      <p>Golfvision Lower  Camera</p>
     </td>
   </tr>
 </table>
